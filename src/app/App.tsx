@@ -5,12 +5,13 @@
 //   - react-feather
 
 //import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { SplashPage} from '../header/header';
 import './App.css';
 
 function NavBar() {
   return(
-    <nav>
+    <nav className="bg-violet-200 text-violet-900">
       <p> Navbar Here </p>
     </nav>
   );
@@ -18,7 +19,7 @@ function NavBar() {
 
 function SideBar() {
   return (
-    <aside>
+    <aside className=" bg-neutral-800">
       <p> Sidebar Content</p>
     </aside>
   );
@@ -26,7 +27,7 @@ function SideBar() {
 
 function SPARouter() {
   return (
-    <main>
+    <main className="min-h-screen bg-neutral-900">
       <p> Main Section</p>
     </main>
   );
@@ -34,7 +35,7 @@ function SPARouter() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="bg-neutral-700">
       <p> Footer Here</p>
     </footer>
   );
@@ -42,13 +43,19 @@ function Footer() {
 
 
 function App() {
+  // TODO reactively show sidebar on widescreen
+  const [showSidebar, setShowSidebar] = useState(false);
   const msg_interval = 5000;
   return (
-    <div className="App">
+    <div className="App bg-neutral-900 text-violet-100">
       <SplashPage msgInterval={msg_interval}/>
       <NavBar/>
-      <SideBar/>
-      <SPARouter/>
+      <div className="flex flex-row">
+      {
+        showSidebar ? <SideBar/> : null
+      }
+        <SPARouter/>
+      </div>
       <Footer/>
     </div>
 
