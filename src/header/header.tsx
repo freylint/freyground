@@ -57,7 +57,7 @@ function MOTDPrompt({msgInterval}: MOTDModel) {
 function ScrollArrow() {
   return (
     <>
-      <button className="grow">
+      <button className="grow" onClick={() => window.scrollBy(0, window.innerHeight)}>
         <ArrowDown className="w-screen"/>
       </button>
     </>
