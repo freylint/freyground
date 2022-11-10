@@ -13,11 +13,11 @@ mk_build_dir:
 	fi
 
 install:
-	cd frontend && $(NODERUNNER) install
+	cd frontend && $(NODERUNNER) install --force
 
 frontend: mk_build_dir install
 	cd frontend && $(NODERUNNER) run build
-	cp -r frontend/build/* dist/
+	cp -r frontend/build/ dist/
 
 backend: mk_build_dir
 	cd backend && $(CARGO) b $(CARGO_RELEASE_FLAGS)
@@ -25,7 +25,9 @@ backend: mk_build_dir
 
 cleanbuild: clean all
 
-clean: clean-frontend clean-backend
+clean: clean-frontend clean-backend clean-dist
+clean-dist:
+	rm -rf dist/
 clean-frontend:
 	rm -rf frontend/node_modules/
 clean-backend:
