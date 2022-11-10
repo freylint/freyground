@@ -4,20 +4,14 @@
 extern crate rocket;
 
 use rocket::Request;
-use rocket::fs::NamedFile;
+use rocket::fs::{NamedFile, FileServer};
 use std::io;
 use std::path::Path;
-use std::path::PathBuf;
 
 #[get("/")]
 async fn index() -> io::Result<NamedFile> {
     // TODO handle errors?
     NamedFile::open(Path::new("index.html")).await
-}
-
-#[get("/<file..>")]
-async fn serve(file: PathBuf) -> io::Result<NamedFile> {
-    NamedFile::open(Path::new("build/static/").join(file)).await
 }
 
 #[catch(500)]
@@ -33,6 +27,7 @@ fn not_found(req: &Request) -> String {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index, serve])
+        .mount("/", routes![index])
+        .mount("/public", FileServer::from("./build/static/"))
         .register("/", catchers![internal_error, not_found],)
 }
