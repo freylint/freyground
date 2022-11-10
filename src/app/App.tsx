@@ -33,6 +33,12 @@ function NavTabSelector() {
         <button className="grow">
           <p>Projects</p>
         </button>
+        <button className="grow">
+          <p>Blog</p>
+        </button>
+        <button className="grow">
+          <p>Utils</p>
+        </button>
       </div>
     </>
   );
