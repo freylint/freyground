@@ -28,22 +28,20 @@ function NavBar() {
 
 function NavTabSelector() {
   return(
-    <>
-      <div className="relative grow flex ml-5 justify-between">
-        <button className="grow">
-          <p>Home</p>
-        </button>
-        <button className="grow">
-          <p>Projects</p>
-        </button>
-        <button className="grow">
-          <p>Blog</p>
-        </button>
-        <button className="grow">
-          <p>Utils</p>
-        </button>
-      </div>
-    </>
+    <div className="relative grow flex ml-5 justify-between">
+      <button className="grow">
+        <p>Home</p>
+      </button>
+      <button className="grow">
+        <p>Projects</p>
+      </button>
+      <button className="grow">
+        <p>Blog</p>
+      </button>
+      <button className="grow">
+        <p>Utils</p>
+      </button>
+    </div>
   );
 }
 
