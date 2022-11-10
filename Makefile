@@ -1,13 +1,16 @@
 NODERUNNER = npm
 CARGO = cargo
-CARGO_RELEASE_FLAGS = --release
 
 all: frontend backend
 
 run:
 	cd dist && ./freyground-backend
-drun: docker
+
+docker-run: docker
 	docker run freyground-runner:latest
+
+drun: frontend backend-dbg run
+
 
 docker:
 	docker build . -t freyground-runner:latest
@@ -27,8 +30,11 @@ frontend: mk_build_dir install
 	cp -r frontend/build/ dist/
 
 backend: mk_build_dir
-	cd backend && $(CARGO) b $(CARGO_RELEASE_FLAGS)
+	cd backend && $(CARGO) b -r
 	cp -r backend/target/release/freyground-backend dist/
+
+backend-dbg:
+	cd backend && $(CARGO) b
 
 cleanbuild: clean all
 cleanrun: cleanbuild run
