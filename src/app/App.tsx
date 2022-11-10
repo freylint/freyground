@@ -31,7 +31,7 @@ function NavTabSelector() {
           <p>Home</p>
         </button>
         <button className="grow">
-          <p>About</p>
+          <p>Projects</p>
         </button>
       </div>
     </>
