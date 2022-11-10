@@ -3,9 +3,13 @@ CARGO = cargo
 CARGO_RELEASE_FLAGS = --release
 
 all: frontend backend
+
 run:
 	cd dist && ./freyground-backend
-cleanrun: cleanbuild run
+
+docker:
+	docker build .
+
 
 mk_build_dir:
 	if ! [ -d "dist" ]; then \
@@ -24,6 +28,7 @@ backend: mk_build_dir
 	cp backend/target/release/freyground-backend dist/
 
 cleanbuild: clean all
+cleanrun: cleanbuild run
 
 clean: clean-frontend clean-backend clean-dist
 clean-dist:
