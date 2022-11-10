@@ -11,6 +11,7 @@ RUN make cleanbuild
 
 FROM alpine:3.15 as runner
 WORKDIR /var/www/
+EXPOSE 8000:80/tcp
 
 COPY --from=builder /usr/src/freyground/dist/ /var/www/
 CMD ["/var/www/freyground-backend"]
