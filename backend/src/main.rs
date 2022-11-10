@@ -14,9 +14,7 @@ fn index() -> io::Result<NamedFile> {
 
 #[get("/<file..>")]
 fn files(file: PathBuf) -> io::Result<NamedFile> {
-  let page_directory_path = 
-  format!("{}/../frontend/build", env!("CARGO_MANIFEST_DIR"));
-  NamedFile::open(Path::new(&page_directory_path).join(file))
+  NamedFile::open(file)
 }
 
 
