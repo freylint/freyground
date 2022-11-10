@@ -6,9 +6,12 @@ all: frontend backend
 
 run:
 	cd dist && ./freyground-backend
+drun: docker
+	docker run freyground-runner:latest
 
 docker:
-	docker build .
+	docker build . -t freyground-runner:latest
+
 
 
 mk_build_dir:
