@@ -21,7 +21,7 @@ function SideBar() {
 
 function SPARouter() {
   return (
-    <main className="min-h-screen bg-neutral-900">
+    <main className="bg-neutral-900">
       <p> Main Section</p>
     </main>
   );
@@ -43,12 +43,14 @@ function App() {
   return (
     <div className="App bg-neutral-900 text-violet-100">
       <SplashPage msgInterval={msg_interval}/>
-      <NavBar/>
-      <div className="flex flex-row">
-        {showSidebar ? <SideBar/> : null}
-        <SPARouter/>
-      </div>
-      <Footer/>
+      <div className="flex flex-col min-h-screen">
+        <NavBar/>
+        <div className="flex flex-row grow">
+          {showSidebar ? <SideBar/> : null}
+          <SPARouter/>
+        </div>
+        <Footer/>
+    </div>
     </div>
 
   );
