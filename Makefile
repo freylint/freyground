@@ -28,7 +28,7 @@ frontend: mk_build_dir install
 
 backend: mk_build_dir
 	cd backend && $(CARGO) b $(CARGO_RELEASE_FLAGS)
-	cp backend/target/release/freyground-backend dist/
+	cp -r backend/target/release/freyground-backend dist/
 
 cleanbuild: clean all
 cleanrun: cleanbuild run
