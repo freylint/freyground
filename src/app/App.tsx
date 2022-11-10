@@ -7,13 +7,49 @@
 //import React, { useState, useEffect } from 'react';
 import { useState } from 'react';
 import { SplashPage} from '../header/header';
+import { Menu, GitHub, Gitlab } from 'react-feather';
 import './App.css';
 
 function NavBar() {
   return(
-    <nav className="bg-violet-200 text-violet-900">
-      <p> Navbar Here </p>
+    <nav className="flex flex-nowrap bg-violet-300 text-violet-900 items-center">
+      <button>
+        <Menu />
+      </button>
+      <p className="mx-5"> Freyground </p>
+      <NavTabSelector />
+      <NavSocialsIcons />
     </nav>
+  );
+}
+
+function NavTabSelector() {
+  return(
+    <>
+      <div className="ml-5">
+        <button className="grow">
+          <p>Home</p>
+        </button>
+        <button className="grow">
+          <p>About</p>
+        </button>
+      </div>
+    </>
+  );
+}
+
+function NavSocialsIcons() {
+  return (
+    <>
+      <div className="mr-5">
+        <button>
+          <GitHub />
+        </button>
+        <button>
+          <Gitlab />
+        </button>
+      </div>
+    </>
   );
 }
 
@@ -51,9 +87,7 @@ function App() {
       <SplashPage msgInterval={msg_interval}/>
       <NavBar/>
       <div className="flex flex-row">
-      {
-        showSidebar ? <SideBar/> : null
-      }
+        {showSidebar ? <SideBar/> : null}
         <SPARouter/>
       </div>
       <Footer/>
