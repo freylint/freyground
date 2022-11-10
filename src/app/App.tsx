@@ -12,11 +12,14 @@ import './App.css';
 
 function NavBar() {
   return(
-    <nav className="flex flex-nowrap bg-violet-300 text-violet-900 items-center">
-      <button>
+    <nav className="
+        relative w-full flex flex-wrap
+        items-center justify-between py-3
+        shadow-lg bg-violet-300 text-violet-900 items-center
+    ">
+      <button className="ml-5">
         <Menu />
       </button>
-      <p className="mx-5"> Freyground </p>
       <NavTabSelector />
       <NavSocialsIcons />
     </nav>
@@ -26,7 +29,7 @@ function NavBar() {
 function NavTabSelector() {
   return(
     <>
-      <div className="ml-5">
+      <div className="relative grow flex ml-5 justify-between">
         <button className="grow">
           <p>Home</p>
         </button>
