@@ -6,7 +6,7 @@
 
 //import React, { useState, useEffect } from 'react';
 import { useState } from 'react';
-import { SplashPage} from '../header/header';
+import { SplashPage} from '../components/header';
 import { Menu, Code, GitHub, Gitlab } from 'react-feather';
 import './App.css';
 
