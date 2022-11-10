@@ -5,13 +5,20 @@
 use std::path::Path; 
 use rocket::response::NamedFile;
 use std::io;
+use std::path::PathBuf;
 
 #[get("/")]
 fn index() -> io::Result<NamedFile> {
+  NamedFile::open(Path::new("index.html"))
+}
+
+#[get("/<file..>")]
+fn files(file: PathBuf) -> io::Result<NamedFile> {
   let page_directory_path = 
   format!("{}/../frontend/build", env!("CARGO_MANIFEST_DIR"));
-  NamedFile::open(Path::new(&page_directory_path).join("index.html"))
+  NamedFile::open(Path::new(&page_directory_path).join(file))
 }
+
 
 fn main() {
     rocket::ignite().mount("/", routes![index]).launch();
