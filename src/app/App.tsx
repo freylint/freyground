@@ -7,7 +7,7 @@
 //import React, { useState, useEffect } from 'react';
 import { useState } from 'react';
 import { SplashPage} from '../header/header';
-import { Menu, GitHub, Gitlab } from 'react-feather';
+import { Menu, Code, GitHub, Gitlab } from 'react-feather';
 import './App.css';
 
 function NavBar() {
@@ -42,6 +42,9 @@ function NavSocialsIcons() {
   return (
     <>
       <div className="mr-5">
+        <button>
+          <Code />
+        </button>
         <button>
           <GitHub />
         </button>
