@@ -35,6 +35,7 @@ backend: mk_build_dir
 
 backend-dbg:
 	cd backend && $(CARGO) b
+	cp -r backend/target/debug/freyground-backend dist/
 
 cleanbuild: clean all
 cleanrun: cleanbuild run
