@@ -7,11 +7,11 @@ RUN apk add --no-cache \
         make \
         build-base
 
-RUN make cleanbuild
+RUN make
 
 FROM alpine:3.15 as runner
 WORKDIR /var/www/
-EXPOSE 8000:80/tcp
+EXPOSE 8000
 
 COPY --from=builder /usr/src/freyground/dist/ /var/www/
-CMD ["/var/www/freyground-backend"]
+ENTRYPOINT ["./freyground-backend"]
