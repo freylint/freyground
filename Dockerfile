@@ -11,7 +11,6 @@ RUN make
 
 FROM alpine:3.15 as runner
 WORKDIR /var/www/
-EXPOSE 8000
+EXPOSE 80:8000
 
 COPY --from=builder /usr/src/freyground/dist/ /var/www/
-ENTRYPOINT ["./freyground-backend"]

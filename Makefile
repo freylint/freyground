@@ -4,17 +4,25 @@ DIST=dist
 BACKEND=backend
 BACKEND_TARGET=$(BACKEND)/target/release
 BACKEND_TARGET_DBG=$(BACKEND)/target/debug
-
+DOCKER_REG_URL=registry.digitalocean.com/freyground-registry
+IMAGE_TAG = freyground-runner:latest
 
 all: build
 
 build: frontend backend-dbg
 rbuild: frontend backend
 
-drun: dbuild
-	docker run -P freyground-runner:latest
+drun:
+	docker run -P -p "80:8000" freyground-runner:latest
 dbuild:
 	docker build . -t freyground-runner:latest
+ddev: dbuild drun
+
+dtag: clean dbuild
+	docker tag $(IMAGE_TAG) $(DOCKER_REG_URL)/$(IMAGE_TAG)
+dpush:
+	docker push $(DOCKER_REG_URL)/$(IMAGE_TAG)
+dupdate: dtag dpush
 
 run: frontend backend-dbg run-internal
 rrun: frontend backend run-internal
