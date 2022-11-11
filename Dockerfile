@@ -7,7 +7,7 @@ RUN apk add --no-cache \
         make \
         build-base
 
-RUN make
+RUN make rbuild
 
 FROM alpine:3.15 as runner
 WORKDIR /var/www/
