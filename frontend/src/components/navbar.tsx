@@ -8,14 +8,21 @@ export default function NavBar() {
         items-center justify-between py-3
         shadow-lg bg-violet-300 text-violet-900 items-center
     ">
-      <div className="flex flex-row">
+      <div className="flex flex-row w-screen md:w-auto">
         <button className="mx-5 ">
           <Menu />
         </button>
-        <NavBranding />
+        <div className="grow">
+          <NavBranding />
+        </div>
+        <div className="visible md:hidden">
+          <NavSocialIcons />
+        </div>
       </div>
         <NavTabSelector />
-        <NavSocialIcons/>
+        <div className="hidden md:block">
+          <NavSocialIcons />
+        </div>
     </nav>
   );
 }
