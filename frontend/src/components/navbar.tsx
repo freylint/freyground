@@ -12,7 +12,7 @@ export default function NavBar() {
         <button className="mx-5 ">
           <Menu />
         </button>
-        <div className="grow">
+        <div className="grow flex flex-row">
           <NavBranding />
         </div>
         <div className="visible md:hidden">

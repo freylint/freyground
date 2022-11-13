@@ -3,7 +3,7 @@ import {Code, GitHub, Gitlab} from 'react-feather';
 export default function NavSocialIcons() {
   const buttons = [Code, GitHub, Gitlab]; 
   return (
-    <div className="mx-5">
+    <div className="mx-5 grow items-center justify-center">
       {
         buttons.map((IconButton, i)=>{
             return (
