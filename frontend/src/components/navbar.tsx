@@ -1,4 +1,6 @@
-import { Menu, Code, GitHub, Gitlab } from 'react-feather';
+import { Menu } from 'react-feather';
+import NavSocialIcons from './socialbuttons';
+
 export default function NavBar() {
   return(
     <nav className="
@@ -10,14 +12,14 @@ export default function NavBar() {
         <Menu />
       </button>
       <NavTabSelector />
-      <NavSocialsIcons />
+      <NavSocialIcons />
     </nav>
   );
 }
 
 function NavTabSelector() {
   return(
-    <div className="relative grow flex ml-5 justify-between">
+    <div className="relative w-screen md:w-1/2 flex ml-5 justify-between">
       <button className="grow">
         <p>Home</p>
       </button>
@@ -34,20 +36,3 @@ function NavTabSelector() {
   );
 }
 
-function NavSocialsIcons() {
-  return (
-    <>
-      <div className="mr-5">
-        <button>
-          <Code />
-        </button>
-        <button>
-          <GitHub />
-        </button>
-        <button>
-          <Gitlab />
-        </button>
-      </div>
-    </>
-  );
-}
