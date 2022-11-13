@@ -85,9 +85,8 @@ function Footer() {
 }
 
 
-function App() {
+export default function App() {
   function renderSidebar(shouldShow: boolean) {
-
     if (shouldShow) {
       return (
         <SideBar />
@@ -95,7 +94,7 @@ function App() {
     }
   }
 
-  function renderRouter(showSidebar: boolean) {
+  function renderRouter() {
     let shouldSidebarExpand: boolean = window.innerWidth <= 1280;
 
     if (!shouldSidebarExpand) {
@@ -109,7 +108,7 @@ function App() {
   }
 
   // TODO reactively show sidebar on widescreen
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState(false);
   const msg_interval = 5000;
   return (
     <div className="App bg-neutral-900 text-violet-100">
@@ -118,13 +117,11 @@ function App() {
         <NavBar/>
         <div className="flex flex-row grow">
           {renderSidebar(showSidebar)}
-          {renderRouter(showSidebar)}
+          {renderRouter()}
         </div>
         <Footer/>
       </div>
     </div>
-
   );
 }
 
-export default App;
