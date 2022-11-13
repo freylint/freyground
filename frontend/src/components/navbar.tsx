@@ -5,7 +5,8 @@ export default function NavBar() {
   return(
     <nav className="
         relative w-full flex flex-wrap
-        items-center justify-between py-3
+        py-3 md:py-1
+        items-center justify-between
         shadow-lg bg-violet-300 text-violet-900 items-center
     ">
       <div className="flex flex-row w-screen md:w-auto">
