@@ -12,6 +12,9 @@ import NavSocialIcons from '../components/socialbuttons';
 import './App.css';
 
 
+interface SideBarModel {
+  shouldGrow: boolean,
+}
 function SideBar() {
   function SetPrimRule() {
     return(
@@ -49,7 +52,7 @@ function SideBar() {
       flex flex-col
       w-screen md:w-1/4
       bg-neutral-800
-    ">
+     ">
       <h2 className="my-3"> Sidebar Content</h2>
       <SetPrimRule />
         <p>Settings</p>
@@ -83,8 +86,30 @@ function Footer() {
 
 
 function App() {
+  function renderSidebar(shouldShow: boolean) {
+
+    if (shouldShow) {
+      return (
+        <SideBar />
+      );
+    }
+  }
+
+  function renderRouter(showSidebar: boolean) {
+    let shouldSidebarExpand: boolean = window.innerWidth <= 1280;
+
+    if (!shouldSidebarExpand) {
+      return (
+        <>
+          <SPARouter/>
+        </>
+      );
+    }
+
+  }
+
   // TODO reactively show sidebar on widescreen
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
   const msg_interval = 5000;
   return (
     <div className="App bg-neutral-900 text-violet-100">
@@ -92,8 +117,8 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <NavBar/>
         <div className="flex flex-row grow">
-          <SideBar/>
-          <SPARouter/>
+          {renderSidebar(showSidebar)}
+          {renderRouter(showSidebar)}
         </div>
         <Footer/>
       </div>
