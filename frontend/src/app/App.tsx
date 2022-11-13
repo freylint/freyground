@@ -29,6 +29,35 @@ function SideBar() {
     );
   }
 
+  function TabNavGroup() {
+    const tabGroups = [
+      "Home", "Projects", "Blog", "Utils"
+    ];
+
+    return (
+      <>
+        {
+          tabGroups.map((name: string, i: number) => {
+            if (i == tabGroups.length - 1) {
+              return (
+                <>
+                  <h1>{name}</h1>
+                  <SetPrimRule />
+                </>
+              );
+            } else {
+              return (
+                <>
+                  <h1>{name}</h1>
+                </>
+              );
+            }
+          })
+        }
+      </>
+    );
+  }
+
 
   return (
     <aside className="
@@ -40,25 +69,12 @@ function SideBar() {
         <p>Settings</p>
       <SetPrimRule/>
       <nav className="grow">
-        <h3>
-          Home
-        </h3>
-        <SetSecRule />
-        <h3>
-          Projects
-        </h3>
-        <SetSecRule />
-        <h3>
-          Blog
-        </h3>
-        <SetSecRule />
-        <h3>
-          Utils
-        </h3>
-        <SetSecRule />
+        <TabNavGroup />
       </nav>
       <SetPrimRule />
-      <NavSocialIcons />
+      <div className="mt-2">
+        <NavSocialIcons />
+      </div>
     </aside>
   );
 }
