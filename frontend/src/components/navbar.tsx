@@ -1,4 +1,4 @@
-import { Menu } from 'react-feather';
+import { Menu, Globe } from 'react-feather';
 import NavSocialIcons from './socialbuttons';
 
 export default function NavBar() {
@@ -8,18 +8,32 @@ export default function NavBar() {
         items-center justify-between py-3
         shadow-lg bg-violet-300 text-violet-900 items-center
     ">
-      <button className="ml-5">
-        <Menu />
-      </button>
-      <NavTabSelector />
-      <NavSocialIcons />
+      <div className="flex flex-row">
+        <button className="mx-5 ">
+          <Menu />
+        </button>
+        <NavBranding />
+      </div>
+        <NavTabSelector />
+        <NavSocialIcons/>
     </nav>
+  );
+}
+
+function NavBranding() {
+  return (
+    <button className="flex flex-row grow justify-center">
+      <Globe className="ml-5" />
+      <h1 className="ml-1">
+        Freyground
+      </h1>
+    </button>
   );
 }
 
 function NavTabSelector() {
   return(
-    <div className="relative w-screen md:w-1/2 flex ml-5 justify-between">
+    <div className="relative w-full md:w-auto flex ml-5 grow justify-between">
       <button className="grow">
         <p>Home</p>
       </button>
