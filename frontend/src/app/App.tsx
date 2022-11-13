@@ -30,30 +30,15 @@ function SideBar() {
   }
 
   function TabNavGroup() {
-    const tabGroups = [
+    const tabs = [
       "Home", "Projects", "Blog", "Utils"
-    ];
+    ]
 
     return (
       <>
-        {
-          tabGroups.map((name: string, i: number) => {
-            if (i == tabGroups.length - 1) {
-              return (
-                <>
-                  <h1>{name}</h1>
-                  <SetPrimRule />
-                </>
-              );
-            } else {
-              return (
-                <>
-                  <h1>{name}</h1>
-                </>
-              );
-            }
-          })
-        }
+        {tabs.map((tname: string, i: number) => {
+          return (<h1 key={tname + i}>{tname}</h1>);
+        })}
       </>
     );
   }
@@ -70,6 +55,7 @@ function SideBar() {
       <SetPrimRule/>
       <nav className="grow">
         <TabNavGroup />
+        <SetPrimRule />
       </nav>
       <SetPrimRule />
       <div className="mt-2">
