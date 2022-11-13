@@ -8,13 +8,57 @@
 import { useState } from 'react';
 import { SplashPage} from '../components/header';
 import NavBar from '../components/navbar';
+import NavSocialIcons from '../components/socialbuttons';
 import './App.css';
 
 
 function SideBar() {
+  function SetPrimRule() {
+    return(
+      <>
+        <hr className="center w-3/4"/>
+      </>
+    );
+  }
+
+  function SetSecRule() {
+    return(
+      <>
+        <hr className="w-full"/>
+      </>
+    );
+  }
+
+
   return (
-    <aside className=" bg-neutral-800">
-      <p> Sidebar Content</p>
+    <aside className="
+      flex flex-col
+      w-screen md:w-1/4
+      bg-neutral-800
+    ">
+      <h2 className="my-3"> Sidebar Content</h2>
+        <p>Settings</p>
+      <SetPrimRule/>
+      <nav className="grow">
+        <h3>
+          Home
+        </h3>
+        <SetSecRule />
+        <h3>
+          Projects
+        </h3>
+        <SetSecRule />
+        <h3>
+          Blog
+        </h3>
+        <SetSecRule />
+        <h3>
+          Utils
+        </h3>
+        <SetSecRule />
+      </nav>
+      <SetPrimRule />
+      <NavSocialIcons />
     </aside>
   );
 }
@@ -46,7 +90,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <NavBar/>
         <div className="flex flex-row grow">
-          {showSidebar ? <SideBar/> : null}
+          <SideBar/>
           <SPARouter/>
         </div>
         <Footer/>
