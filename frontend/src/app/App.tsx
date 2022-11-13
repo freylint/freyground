@@ -12,9 +12,6 @@ import NavSocialIcons from '../components/socialbuttons';
 import './App.css';
 
 
-interface SideBarModel {
-  shouldGrow: boolean,
-}
 function SideBar() {
   function SetPrimRule() {
     return(
