@@ -19,7 +19,7 @@ export default function NavBar() {
 
 function NavTabSelector() {
   return(
-    <div className="relative grow flex ml-5 justify-between">
+    <div className="relative w-screen md:w-1/2 flex ml-5 justify-between">
       <button className="grow">
         <p>Home</p>
       </button>
