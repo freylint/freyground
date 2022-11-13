@@ -16,7 +16,7 @@ function SideBar() {
   function SetPrimRule() {
     return(
       <>
-        <hr className="center w-3/4"/>
+        <hr className="center w-5/6"/>
       </>
     );
   }
@@ -24,7 +24,7 @@ function SideBar() {
   function SetSecRule() {
     return(
       <>
-        <hr className="w-full"/>
+        <hr className="w-4/5"/>
       </>
     );
   }
@@ -51,11 +51,11 @@ function SideBar() {
       bg-neutral-800
     ">
       <h2 className="my-3"> Sidebar Content</h2>
+      <SetPrimRule />
         <p>Settings</p>
-      <SetPrimRule/>
+      <SetSecRule/>
       <nav className="grow">
         <TabNavGroup />
-        <SetPrimRule />
       </nav>
       <SetPrimRule />
       <div className="mt-2">
@@ -96,7 +96,7 @@ function App() {
           <SPARouter/>
         </div>
         <Footer/>
-    </div>
+      </div>
     </div>
 
   );
