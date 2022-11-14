@@ -6,7 +6,11 @@ import { Circle, ArrowDown } from 'react-feather';
 function HeaderBar() {
   return (
     <>
-      <h1 className="grow flex items-end text-6xl">The Freyground</h1>
+      <h1 className="
+        grow flex items-end text-center text-6xl
+        ">
+          The Freyground
+        </h1>
     </>
   );
 }

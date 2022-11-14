@@ -9,7 +9,6 @@ import { useState } from 'react';
 import { SplashPage} from '../components/header';
 import NavBar from '../components/navbar';
 import NavSocialIcons from '../components/socialbuttons';
-import './App.css';
 
 
 function SideBar() {
