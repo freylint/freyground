@@ -53,7 +53,7 @@ function MOTDPrompt({msgInterval}: MOTDModel) {
 
   return (
     <>
-      <h2 className="text-4xl">{ messages[msgIndex] }</h2>
+      <h2 className="text-center text-4xl">{ messages[msgIndex] }</h2>
     </>
   );
 }
