@@ -1,9 +1,8 @@
-import { isFunctionTypeNode } from "typescript";
 
-function HomePage() {
+export function HomePage() {
   return(
     <>
-      <h1></h1>
+      <h1>Home page content</h1>
     </>
   );
 }
