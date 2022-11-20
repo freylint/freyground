@@ -6,9 +6,17 @@
 
 //import React, { useState, useEffect } from 'react';
 import { useState } from 'react';
-import { SplashPage} from '../components/header';
+import { SplashPage } from '../components/header';
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+
+import { HomePage } from "../pages/home";
 import NavBar from '../components/navbar';
 import NavSocialIcons from '../components/socialbuttons';
+
+const router = createBrowserRouter([{
+  path: "/",
+  element: <p>hello-world</p>
+}])
 
 
 function SideBar() {
@@ -67,7 +75,7 @@ function SideBar() {
 function SPARouter() {
   return (
     <main className="bg-neutral-900">
-      <p> Main Section</p>
+      <RouterProvider router={router}/>
     </main>
   );
 }
@@ -84,23 +92,15 @@ function Footer() {
 export default function App() {
   function renderSidebar(shouldShow: boolean) {
     if (shouldShow) {
-      return (
-        <SideBar />
-      );
+      return (<SideBar />);
     }
   }
 
   function renderRouter() {
     let shouldSidebarExpand: boolean = window.innerWidth <= 1280;
-
     if (!shouldSidebarExpand) {
-      return (
-        <>
-          <SPARouter/>
-        </>
-      );
+      return (<SPARouter />);
     }
-
   }
 
   // TODO reactively show sidebar on widescreen
