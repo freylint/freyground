@@ -6,7 +6,11 @@ import { Circle, ArrowDown } from 'react-feather';
 function HeaderBar() {
   return (
     <>
-      <h1 className="grow flex items-end text-6xl">The Freyground</h1>
+      <h1 className="
+        grow flex items-end text-center text-6xl
+        ">
+          The Freyground
+        </h1>
     </>
   );
 }
@@ -49,7 +53,7 @@ function MOTDPrompt({msgInterval}: MOTDModel) {
 
   return (
     <>
-      <h2 className="text-4xl">{ messages[msgIndex] }</h2>
+      <h2 className="text-center text-4xl">{ messages[msgIndex] }</h2>
     </>
   );
 }
