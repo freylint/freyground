@@ -15,7 +15,7 @@ import NavSocialIcons from '../components/socialbuttons';
 
 const router = createBrowserRouter([{
   path: "/",
-  element: <p>hello-world</p>
+  element: <HomePage />
 }])
 
 
