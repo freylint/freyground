@@ -20,7 +20,7 @@ export default function OhioBotLoader() {
 }
 
 function OhioBot({ addr }) {
-  const channel = "#freylint";
+  const channel = "#allypandapants";
   var [searchParams] = useSearchParams();
 
   // Initialize the IRC websocket
