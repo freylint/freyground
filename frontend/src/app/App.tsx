@@ -96,9 +96,10 @@ export default function App() {
     }
   }
 
-  function renderRouter() {
+  function renderRouter(sidebarExpanded: boolean) {
+    // TODO interop with tailwind for this literal
     let shouldSidebarExpand: boolean = window.innerWidth <= 1280;
-    if (!shouldSidebarExpand) {
+    if (shouldSidebarExpand && !sidebarExpanded) {
       return (<SPARouter />);
     }
   }
@@ -113,7 +114,7 @@ export default function App() {
         <NavBar/>
         <div className="flex flex-row grow">
           {renderSidebar(showSidebar)}
-          {renderRouter()}
+          {renderRouter(showSidebar)}
         </div>
         <Footer/>
       </div>
