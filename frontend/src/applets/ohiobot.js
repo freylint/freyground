@@ -49,6 +49,7 @@ function OhioBot({ addr }) {
       }
       // Handle Keepalive
       else if (/PING/.test(msg)) {
+        socket.send("PONG :" + channel.slice(1) + ".twitch.tv");
       }
       // A private message was sent
       else if (/PRIVMSG/.test(msg)) {
