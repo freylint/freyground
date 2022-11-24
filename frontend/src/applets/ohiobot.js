@@ -16,8 +16,8 @@ export default function OhioBot() {
 
 
     return (
-        <div>
+        <>
             <p> Ohio bot loaded </p>
-        </div>
+        </>
     );
 }
