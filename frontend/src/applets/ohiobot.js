@@ -2,7 +2,7 @@
 import React from "react";
 
 export default function OhioBot() {
-    var [socket, setSocket] = React.useState(new WebSocket("wss://irc-ws.chat.twitch.tv:443"))
+    var [socket,_] = React.useState(new WebSocket("wss://irc-ws.chat.twitch.tv:443"))
 
     socket.addEventListener('open', (event) => {
         console.log('Opening Ohio bot', event.data);
