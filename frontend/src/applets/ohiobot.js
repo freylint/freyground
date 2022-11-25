@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 export default function OhioBotLoader() {
-  var [active, setActive] = useState(false);
+  const [active, setActive] = useState(false);
+  const [nick, setNick] = useState("OhioBot");
+  const [secret, setSecret] = useState("API Key");
 
   function render() {
     if (active) {
@@ -12,10 +14,31 @@ export default function OhioBotLoader() {
   }
 
   return (
-    <>
-      <button onClick={() => setActive(!active)}>Load bot</button>
+    <div className="flex flex-col items-center">
+      <hr className="w-screen"/>
+      <h2 className="text-center">Twitch Ohio Bot</h2>
+      <hr className="w-screen"/>
+      <p className="mx-1">
+        Simple twitch bot which executes the !ohio command on a stream.
+      </p>
+      <hr className="w-5/6"/>
+      <div className="mx-2 my-1 flex flex-row">
+        <h3>Alias</h3>
+        <input />
+      </div>
+      <div className="mx-2 my-1 flex flex-row">
+        <h3>Token</h3>
+        <input />
+      </div>
+      <div className="mx-2 my-1 flex flex-row">
+        <h3>Stream</h3>
+        <input />
+      </div>
+      <hr className="w-5/6"/>
+      <button onClick={() => setActive(!active)}>Start OhioBot</button>
       {render()}
-    </>
+      <hr className="w-5/6"/>
+    </div>
   );
 }
 
