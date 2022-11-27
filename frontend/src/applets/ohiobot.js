@@ -44,11 +44,11 @@ export default function OhioBotLoader() {
 
 function OhioBot({ addr }) {
   const channel = "#allypandapants";
-  var [searchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   // Initialize the IRC websocket
-  var effect = useEffect(() => {
-    var socket = new WebSocket(addr);
+  const effect = useEffect(() => {
+    const socket = new WebSocket(addr);
 
     socket.addEventListener("open", () => {
       var auth = searchParams.get("auth");
