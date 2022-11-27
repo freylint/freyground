@@ -13,9 +13,13 @@ RUN apk add --no-cache \
 # The development image for containerized development
 FROM base as development
 WORKDIR /usr/src/freyground/
+# Additional dev deps
 RUN apk add --no-cache \
     git \
-    openssh
+    openssh \
+    zsh
+# Set default shell to zsh
+RUN sed -i 's/root:\/bin\/ash/root:\/bin\/zsh/g' /etc/passwd 
 
 # Builder for automated building of the application
 FROM base as builder
