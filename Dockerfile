@@ -2,10 +2,10 @@ FROM rustlang/rust:nightly-alpine3.15 as builder
 WORKDIR /usr/src/freyground/
 COPY . .
 RUN apk add --no-cache \
-        nodejs=16.17.1-r0 \
-        npm \
-        make \
-        build-base
+    nodejs=16.17.1-r0 \
+    npm \
+    make \
+    build-base
 
 RUN make rbuild
 
