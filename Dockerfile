@@ -14,7 +14,8 @@ RUN apk add --no-cache \
 FROM base as development
 WORKDIR /usr/src/freyground/
 RUN apk add --no-cache \
-    git
+    git \
+    openssh
 
 # Builder for automated building of the application
 FROM base as builder
