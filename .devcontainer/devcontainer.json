@@ -8,4 +8,9 @@
 		"target": "development"
 	},
 	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"forwardPorts": [
+		3000,
+		8000,
+		8080
+	]
 }
