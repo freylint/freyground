@@ -12,7 +12,7 @@
 **/build
 **/dist
 **/target/
-bazel-*/
+/bazel-*
 
 # misc
 .DS_Store
