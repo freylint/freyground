@@ -1,16 +1,11 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Freyground Dev",
-	"build": {
-		"context": "..",
-		"dockerfile": "../Dockerfile",
-		"target": "development"
+	"name": "Freyground",
+	"image": "mcr.microsoft.com/devcontainers/typescript-node:18-bullseye",
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {}
 	},
-	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-	"forwardPorts": [
-		3000,
-		8000,
-		8080
-	]
+	"forwardPorts": [],
+	"runArgs": ["--env-file",".devcontainer/devcontainer.env"]
 }
