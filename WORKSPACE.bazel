@@ -31,3 +31,7 @@ rust_repository_set(
     version = "1.64.0",                             
     edition = "2021",                                                                                    
 )         
+
+load("@rules_rust//wasm_bindgen:repositories.bzl", "rust_wasm_bindgen_dependencies", "rust_wasm_bindgen_register_toolchains")
+rust_wasm_bindgen_dependencies()
+rust_wasm_bindgen_register_toolchains()
