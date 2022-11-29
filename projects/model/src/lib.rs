@@ -1,9 +1,14 @@
-#[doc = include_str!("../README.md")]
+pub fn add(left: usize, right: usize) -> usize {
+    left + right
+}
 
+#[cfg(test)]
+mod tests {
+    use super::*;
 
-pub mod service;
-
-// Rexport all module members
-pub use {
-    service:*;
+    #[test]
+    fn it_works() {
+        let result = add(2, 2);
+        assert_eq!(result, 4);
+    }
 }
