@@ -9,5 +9,5 @@
   },
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "yarn install"
+  "postCreateCommand": "npm install"
 }
