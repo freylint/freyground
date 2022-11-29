@@ -9,5 +9,4 @@
   },
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
   "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-  "postCreateCommand": "npm install"
 }
