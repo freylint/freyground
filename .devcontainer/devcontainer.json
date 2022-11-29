@@ -2,7 +2,7 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
   "name": "Freyground",
-  "dockerFile": "Dockerfile",
+  "dockerFile": "../Dockerfile",
   "settings": {
     "git.path": "/usr/bin/git",
     "terminal.integrated.defaultProfile.linux": "bash"
