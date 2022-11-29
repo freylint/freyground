@@ -1,5 +1,10 @@
-genrule(
-    name = "freyground-model",
-    srcs = ["Cargo.toml", "src/**", ".cargo/**"],
-    outs = [],
+package(default_visibility = ["//visibility:public"])
+
+load("@rules_rust//rust:defs.bzl", "rust_library")
+
+rust_library(
+    name = "model",
+    srcs = [
+        "src/lib.rs"
+    ],
 )
