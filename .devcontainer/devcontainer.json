@@ -1,0 +1,16 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.245.2/containers/docker-existing-dockerfile
+{
+	"name": "Freyground Dev",
+	"build": {
+		"context": "..",
+		"dockerfile": "../Dockerfile",
+		"target": "development"
+	},
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"forwardPorts": [
+		3000,
+		8000,
+		8080
+	]
+}
