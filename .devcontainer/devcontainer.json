@@ -8,5 +8,6 @@
     "terminal.integrated.defaultProfile.linux": "bash"
   },
   "runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+  "postCreateCommand": "yarn install"
 }
