@@ -12,3 +12,9 @@ rust_shared_library(
         "@rules_rust//wasm_bindgen/3rdparty:wasm_bindgen",
     ],
 )
+
+rust_wasm_bindgen(
+    name = "model_wasm_bindgen",
+    target = "web",
+    wasm_file = ":model",
+)
