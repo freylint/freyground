@@ -11,5 +11,16 @@
     "--env-file",
     ".devcontainer/devcontainer.env"
   ],
-  "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+"customizations": {
+	"vscode": {
+		"extensions": [
+			"christian-kohler.npm-intellisense",
+			"VisualStudioExptTeam.vscodeintellicode",
+			"ms-azuretools.vscode-docker",
+			"esbenp.prettier-vscode",
+			"rust-lang.rust-analyzer"
+		]
+	}
+}
 }
