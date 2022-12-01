@@ -1,6 +1,9 @@
 ## Freyground Monorepo Architecture
+### High level
+
 
 ### Principles
+The architecture is created with the following priorities.
 - High modularity
 - Easy to change
 - Don't repeat yourself

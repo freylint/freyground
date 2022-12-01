@@ -19,4 +19,4 @@ after only a few weeks into development.
 
 ## Arhictecture
 This program uses a Monorepo Microservice architecture.
-For additional information see [Architecture](docs/architeture.md).
+For additional information see [Architecture](docs/general/architeture.md).
