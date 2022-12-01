@@ -16,3 +16,7 @@ It uses the following busswords:
 
 These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.
+
+## Arhictecture
+This program uses a Monorepo Microservice architecture.
+For additional information see [Architecture](docs/architeture.md).
