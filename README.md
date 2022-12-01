@@ -1,8 +1,11 @@
 [![CI](https://github.com/freylint/freyground/actions/workflows/main.yml/badge.svg)](https://github.com/freylint/freyground/actions/workflows/main.yml)
+
 # Freyground
+
 This is a personal website for myself, freylint.
 
 It uses the following busswords:
+
 - Containerized Development
 - Microservices
 - Behavior Driven Development
