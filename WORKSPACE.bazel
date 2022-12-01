@@ -41,3 +41,7 @@ load("@rules_rust//wasm_bindgen:repositories.bzl", "rust_wasm_bindgen_dependenci
 rust_wasm_bindgen_dependencies()
 
 rust_wasm_bindgen_register_toolchains()
+
+load("//cargo:crates.bzl", "raze_fetch_remote_crates")
+
+raze_fetch_remote_crates()
