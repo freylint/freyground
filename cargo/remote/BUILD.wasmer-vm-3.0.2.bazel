@@ -1,0 +1,68 @@
+"""
+@generated
+cargo-raze crate build file.
+
+DO NOT EDIT! Replaced on runs of cargo-raze
+"""
+
+# buildifier: disable=load
+load("@bazel_skylib//lib:selects.bzl", "selects")
+
+# buildifier: disable=load
+load(
+    "@rules_rust//rust:defs.bzl",
+    "rust_binary",
+    "rust_library",
+    "rust_proc_macro",
+    "rust_test",
+)
+
+package(default_visibility = [
+    # Public for visibility by "@raze__crate__version//" targets.
+    #
+    # Prefer access through "//cargo", which limits external
+    # visibility to explicit Cargo.toml dependencies.
+    "//visibility:public",
+])
+
+licenses([
+    "notice",  # MIT from expression "MIT OR Apache-2.0"
+])
+
+# Generated Targets
+
+rust_library(
+    name = "wasmer_vm",
+    srcs = glob(["**/*.rs"]),
+    crate_features = [
+        "default",
+    ],
+    crate_root = "src/lib.rs",
+    data = [],
+    edition = "2018",
+    rustc_flags = [
+        "--cap-lints=allow",
+    ],
+    tags = [
+        "cargo-raze",
+        "crate-name=wasmer-vm",
+        "manual",
+    ],
+    version = "3.0.2",
+    # buildifier: leave-alone
+    deps = [
+        "@raze__backtrace__0_3_66//:backtrace",
+        "@raze__cfg_if__1_0_0//:cfg_if",
+        "@raze__corosensei__0_1_3//:corosensei",
+        "@raze__enum_iterator__0_7_0//:enum_iterator",
+        "@raze__indexmap__1_9_2//:indexmap",
+        "@raze__lazy_static__1_4_0//:lazy_static",
+        "@raze__libc__0_2_137//:libc",
+        "@raze__memoffset__0_6_5//:memoffset",
+        "@raze__more_asserts__0_2_2//:more_asserts",
+        "@raze__region__3_0_0//:region",
+        "@raze__scopeguard__1_1_0//:scopeguard",
+        "@raze__thiserror__1_0_37//:thiserror",
+        "@raze__wasmer_types__3_0_2//:wasmer_types",
+    ],
+)
