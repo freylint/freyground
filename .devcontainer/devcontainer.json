@@ -19,7 +19,8 @@
 			"VisualStudioExptTeam.vscodeintellicode",
 			"ms-azuretools.vscode-docker",
 			"esbenp.prettier-vscode",
-			"rust-lang.rust-analyzer"
+			"rust-lang.rust-analyzer",
+			"BazelBuild.vscode-bazel"
 		]
 	}
 }
