@@ -14,4 +14,4 @@ jobs:
         name: Spellcheck
         with:
           source_files: README.md
-          task_name: Markdown
+          task_name: README
