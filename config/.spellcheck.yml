@@ -12,5 +12,7 @@ matrix:
             - code
             - pre
     sources:
-      - "README.md"
+      - "docs/**.md"
     default_encoding: utf-8
+    word_lists:
+      - wordlist.txt
