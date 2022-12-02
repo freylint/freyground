@@ -7,7 +7,7 @@
 <li>Microservices</li>
 <li>Behavior Driven Development</li>
 <li>Test Driven Development</li>
-<li>Parrallel Concurrent Actor Architecture</li>
+<li>Parallel Concurrent Actor Architecture</li>
 <li>Blackboard Messaging</li>
 <li>🚀Blazingly Fast🚀 WASM/Rust messaging and supervision</li>
 </ul>
@@ -39,6 +39,6 @@ In rust, testing will be provided by the built in testing machinery, with criter
 <h4>Unit testing</h4>
 <p>Unit testing shadows Integration testing, With the accepted unit testing for a language being used.</p>
 <h4>Benchmarking</h4>
-<p>If a service is found to be a bottleneck, then benchmarking becomes nessecary.
+<p>If a service is found to be a bottleneck, then benchmarking becomes necessary.
 Benchmarking will primarily, be provided by criterion on the assumption that any
 performance critical component will first be rewritten in rust.</p>
