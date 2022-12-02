@@ -14,6 +14,7 @@
 <p>These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.</p>
 <h2>Architecture</h2>
+<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJkK2ao0kK9JB8JKl1QW20000" alt="uml diagram">
 <h3>Principles</h3>
 <p>The architecture is created with the following priorities.</p>
 <ul>
@@ -41,4 +42,3 @@ In rust, testing will be provided by the built in testing machinery, with criter
 <p>If a service is found to be a bottleneck, then benchmarking becomes nessecary.
 Benchmarking will primarily, be provided by criterion on the assumption that any
 performance critical component will first be rewritten in rust.</p>
-<p>&lt;/details&gt;</p>

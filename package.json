@@ -18,5 +18,8 @@
     "markdown-it": "^13.0.1",
     "markdown-it-include": "^2.0.0"
   },
-  "homepage": "https://quak.dev"
+  "homepage": "https://quak.dev",
+  "dependencies": {
+    "markdown-it-textual-uml": "^0.12.0"
+  }
 }

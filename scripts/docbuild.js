@@ -1,6 +1,7 @@
 const fs = require("fs").promises;
-var md = require("markdown-it")().use(require("markdown-it-include"));
-
+var md = require("markdown-it")()
+  .use(require("markdown-it-include"))
+  .use(require("markdown-it-textual-uml"));
 // Allocate buffer for intermediate values
 var data;
 fs.readFile("docs/index.md").then(async (data) => {

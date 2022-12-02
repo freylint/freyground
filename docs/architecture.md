@@ -1,5 +1,10 @@
 ## Architecture
 
+```plantuml
+Bob -> Alice
+Alice -> Bob
+```
+
 ### Principles
 
 The architecture is created with the following priorities.
