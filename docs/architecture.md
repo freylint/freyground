@@ -14,8 +14,8 @@ rectangle Runtime {
         () "Output" as rtwsout
         () "socket" as rtsock
 
-        rtwsin .u.> rtsock
-        rtsock .d.> rtwsout
+        rtwsin .d.> rtsock
+        rtsock .u.> rtwsout
     }
 
     supervisor ..> rtwsin
@@ -35,8 +35,8 @@ rectangle Website {
         () "Output" as fgwsout
         () "socket" as fgsock
 
-        fgwsin .u.> fgsock
-        fgsock .d.> fgwsout
+        fgwsin .d.> fgsock
+        fgsock .u.> fgwsout
     }
     frontend ..> fgwsin
     fgwsout ..> frontend
