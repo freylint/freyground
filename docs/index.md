@@ -1,8 +1,8 @@
 # Freyground
 
-This is a personal website for myself, freylint.
+This is my personal Monorepo, The Freyground.
 
-It uses the following busswords:
+It uses the following buzzwords:
 
 - Containerized Development
 - Microservices
@@ -14,5 +14,7 @@ It uses the following busswords:
 
 These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.
+
+!!!include(docs/philosophy.md)!!!
 
 !!!include(docs/architecture.md)!!!
