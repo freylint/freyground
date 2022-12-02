@@ -6,15 +6,12 @@ on:
     branches: [main]
 
 jobs:
-  ci:
+  spellcheck:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: bazelbuild/setup-bazelisk@v2
-      - name: Mount bazel cache
-        uses: actions/cache@v3
+      - uses: rojopolis/spellcheck-github-actions@0.28.0
+        name: Spellcheck
         with:
-          path: "~/.cache/bazel"
-          key: bazel
-      - run: bazel build --spawn_strategy=standalone //...
-      #- run: bazel test //...
+          source_files: docs/**.md
+          task_name: Markdown
