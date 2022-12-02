@@ -14,8 +14,8 @@ rectangle Runtime {
         () "Output" as rtwsout
         () "socket" as rtsock
 
-        rtsock .u.> rtwsin
-        rtwsout .d.> rtsock
+        rtwsin .u.> rtsock
+        rtsock .d.> rtwsout
     }
 
     supervisor ..> rtwsin
@@ -35,8 +35,8 @@ rectangle Website {
         () "Output" as fgwsout
         () "socket" as fgsock
 
-        fgsock .u.> fgwsin
-        fgwsout .d.> fgsock
+        fgwsin .u.> fgsock
+        fgsock .d.> fgwsout
     }
     frontend ..> fgwsin
     fgwsout ..> frontend
@@ -54,8 +54,8 @@ rectangle Applets {
         () "Output" as appwsout
         () "socket" as appsock
 
-        appsock .d.> appwsin
-        appwsout .u.> appsock
+        appwsin .u.> appsock
+        appsock .d.> appwsout
     }
 
     ohiobot .u.> appwsin
