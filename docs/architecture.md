@@ -1,8 +1,4 @@
-<details>
-
 ## Architecture
-
-<summary>Additional project architecture info...</summary>
 
 ### Principles
 
@@ -41,5 +37,3 @@ Unit testing shadows Integration testing, With the accepted unit testing for a l
 If a service is found to be a bottleneck, then benchmarking becomes nessecary.
 Benchmarking will primarily, be provided by criterion on the assumption that any
 performance critical component will first be rewritten in rust.
-
-</details>
