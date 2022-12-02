@@ -14,7 +14,7 @@
 <p>These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.</p>
 <h2>Architecture</h2>
-<img src="https://www.plantuml.com/plantuml/svg/SoWkIImgAStDuNBAJrBGjLDmpCbCJkK2ao0kK9JB8JKl1QW20000" alt="uml diagram">
+<img src="https://www.plantuml.com/plantuml/svg/bLJBQiCm4BpxAqHExILV44gQGY274cWEFPGUP5jsH6p9hAIKKlhlNRrjDnZYatPdPxKxOtkhD0Lj-gvG5ou62hGd9QqkBKWZwXVPII0Qg508CQ57LRqKiZg3x1a1TcMWM06iqbIq7IDlHcYEo4z1yCdvLGIUXq6j25K4DCLZABJFnyaC3AvSIVYq1Ig5kMJNuOYbf52xaZA5hkItcDsQcpyyajL134Q7kxyK5nFmQFGObKPFO2Mh2ukm3Oe4-vYipVfftZXq8klQOOut6ZHlIDPJSY9YUgP3tdc9D586BykAlBDISNt3dmWaVvfsxiyUsBT_FSWUfD1CU1UQ4DoitE4SiR3qv_kyQjebhoowu5NJJhtoiVTgrZXqybu5dX_KeM579-w8cLWsFTOXxBfK7-MO68JwTqoh_mPv8FipT-Tuvd8djHDQuhcK-ZwXiU6IqWvUaDhECz4w9BoWy-QncxSYSaVpXXKIdjYPQVl6JP5bvpdXZhNzD5wPKhJbeYK7z0GQMZ4tfUfv4Lw2ZMjW4-4Bpeau-iRTRZDRD0f_bdy0" alt="uml diagram">
 <h3>Principles</h3>
 <p>The architecture is created with the following priorities.</p>
 <ul>

@@ -1,8 +1,72 @@
 ## Architecture
 
 ```plantuml
-Bob -> Alice
-Alice -> Bob
+skinparam backgroundColor transparent
+skinparam monochrome reverse
+rectangle Runtime {
+    rectangle "Runtime Apps" as rtapps {
+        [Supervisor] as supervisor
+        [Blackboard] as blackboard
+    }
+
+    rectangle {
+        () "Input" as rtwsin
+        () "Output" as rtwsout
+        () "socket" as rtsock
+
+        rtsock .u.> rtwsin
+        rtwsout .d.> rtsock
+    }
+
+    supervisor ..> rtwsin
+    rtwsout ..> supervisor
+    blackboard ..> rtwsin
+    rtwsout ..> blackboard
+}
+
+rectangle Website {
+    rectangle "Website Apps" as fgapps {
+        [Freyground Frontend] as frontend
+        [Freyground Backend] as backend
+    }
+
+    rectangle {
+        () "Input" as fgwsin
+        () "Output" as fgwsout
+        () "socket" as fgsock
+
+        fgsock .u.> fgwsin
+        fgwsout .d.> fgsock
+    }
+    frontend ..> fgwsin
+    fgwsout ..> frontend
+    backend ..> fgwsin
+    fgwsout ..> backend
+}
+
+rectangle Applets {
+    rectangle "Applet Apps" as apps {
+        [OhioBot] as ohiobot
+    }
+
+    rectangle {
+        () "Input" as appwsin
+        () "Output" as appwsout
+        () "socket" as appsock
+
+        appsock .d.> appwsin
+        appwsout .u.> appsock
+    }
+
+    ohiobot .u.> appwsin
+    appwsout .d.> ohiobot
+}
+
+() "Standard Messaging Interface" as smi
+fgsock <.d.> smi
+rtsock <.d.> smi
+appsock <.u.> smi
+
 ```
 
 ### Principles
