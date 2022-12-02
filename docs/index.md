@@ -14,7 +14,3 @@ It uses the following busswords:
 
 These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.
-
-## Arhictecture
-
-<!--ARCHITECTURE-->
