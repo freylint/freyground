@@ -1,9 +1,4 @@
-name: CI
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+name: Spellchecker
 
 jobs:
   spellcheck:
@@ -13,6 +8,6 @@ jobs:
       - uses: rojopolis/spellcheck-github-actions@0.28.0
         name: Spellcheck
         with:
-          config_path: config/spellcheck.yml
-          source_files: docs/**.md
+          config_path: .github/workflows/spellcheck/spellcheck.yml
+          source_files: README.md
           task_name: README
