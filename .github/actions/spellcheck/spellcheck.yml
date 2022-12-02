@@ -15,4 +15,4 @@ matrix:
       - "docs/**.md"
     default_encoding: utf-8
     word_lists:
-      - wordlist.txt
+      - .github/actions/spellcheck/wordlist.txt
