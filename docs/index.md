@@ -8,7 +8,7 @@ It uses the following buzzwords:
 - Microservices
 - Behavior Driven Development
 - Test Driven Development
-- Parrallel Concurrent Actor Architecture
+- Parallel Concurrent Actor Architecture
 - Blackboard Messaging
 - 🚀Blazingly Fast🚀 WASM/Rust messaging and supervision
 
