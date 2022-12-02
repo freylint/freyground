@@ -6,7 +6,6 @@ runs:
       uses: actions/checkout@v2
     - name: Spellcheck Documentation
       uses: rojopolis/spellcheck-github-actions@0.28.0
-      name: Spellcheck
       with:
         config_path: .github/workflows/spellcheck/spellcheck.yml
         source_files: README.md
