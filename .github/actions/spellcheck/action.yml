@@ -8,6 +8,6 @@ runs:
     - name: Spellcheck Documentation
       uses: rojopolis/spellcheck-github-actions@0.28.0
       with:
-        config_path: .github/workflows/spellcheck/spellcheck.yml
+        config_path: .github/actions/spellcheck/spellcheck.yml
         source_files: README.md
         task_name: README
