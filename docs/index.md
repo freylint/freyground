@@ -18,3 +18,5 @@ after only a few weeks into development.
 !!!include(docs/philosophy.md)!!!
 
 !!!include(docs/architecture.md)!!!
+
+!!!include(docs/historical.md)!!!
