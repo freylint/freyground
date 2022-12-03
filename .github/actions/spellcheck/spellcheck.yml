@@ -4,8 +4,9 @@ matrix:
       lang: en
     dictionary:
       encoding: utf-8
+      word_lists:
+        - .github/actions/spellcheck/wordlist.txt
     pipeline:
-      - pyspelling.filters.markdown:
       - pyspelling.filters.html:
           comments: false
           ignores:
@@ -14,5 +15,3 @@ matrix:
     sources:
       - "docs/**.md"
     default_encoding: utf-8
-    word_lists:
-      - .github/actions/spellcheck/wordlist.txt
