@@ -1,0 +1,14 @@
+{
+  "filters": {},
+  "rules": {
+    "en-spell": {
+      "personalDictionary": [
+        "freyground",
+        "blazingly",
+        "modularity",
+        "proto1",
+        "proto2"
+      ]
+    }
+  }
+}

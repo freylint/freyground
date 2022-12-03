@@ -11,12 +11,15 @@
   },
   "scripts": {
     "build": "npm run build-docs",
-    "build-docs": "node scripts/docbuild.js"
+    "build-docs": "node scripts/docbuild.js",
+    "spell-docs": "textlint docs/*.md"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^8.9.0",
     "markdown-it": "^13.0.1",
-    "markdown-it-include": "^2.0.0"
+    "markdown-it-include": "^2.0.0",
+    "textlint": "^12.2.3",
+    "textlint-rule-en-spell": "^1.2.4"
   },
   "homepage": "https://quak.dev",
   "dependencies": {
