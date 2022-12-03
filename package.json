@@ -11,8 +11,8 @@
   },
   "homepage": "https://quak.dev",
   "jest": {
-    "testMatch": ["tests/*.steps.js"],
-    "verbose": true
+    "verbose": true,
+    "testMatch": ["**/*.steps.[tj]s", "**/*.spec.[tj]s"]
   },
   "scripts": {
     "test": "jest",
