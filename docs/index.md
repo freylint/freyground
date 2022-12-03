@@ -15,6 +15,10 @@ It uses the following buzzwords:
 These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.
 
+## TODO
+
+[] - Combine output of jest and rust tests
+
 !!!include(docs/philosophy.md)!!!
 
 !!!include(docs/architecture.md)!!!
