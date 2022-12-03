@@ -22,7 +22,8 @@
   },
   "scripts": {
     "test": "jest",
-    "build": "npm run build-docs",
+    "build": "npm run build-docs && npm run build-runtime",
+    "build-runtime": "cargo b --manifest-path projects/fg-runtime/Cargo.toml --target-dir ./build/",
     "build-docs": "node scripts/docbuild.js",
     "spell-docs": "textlint docs/*.md"
   },
