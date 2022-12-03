@@ -17,7 +17,9 @@ after only a few weeks into development.
 
 ## TODO
 
+[] - Port build system to gulp.
 [] - Combine output of jest and rust tests
+[] - Make fg-model nostd + wee-alloc
 
 !!!include(docs/philosophy.md)!!!
 
