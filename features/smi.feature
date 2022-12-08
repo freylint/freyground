@@ -7,8 +7,9 @@ Feature: Standard messaging interface
 
   Scenario: A service needs ability to query Blackboard
     Then SMI provides blackboard_address_request
-  
-  Scenario: Runtime and blackboard need to communicate
+
+  Scenario: service and blackboard need to communicate
     Then SMI provides blackboard_requests enum
-
-
+  
+  Scenario: service needs to respond to request from blackboard
+    Then SMI provides blackboard_responses variant
