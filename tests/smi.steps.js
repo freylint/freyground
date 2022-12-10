@@ -1,6 +1,14 @@
+//! This is a set of Jest tests which test the SMI using it's autodocs.
+
+const fs = require('fs');
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
+/// The cucumber feature to be tested
 const feature = loadFeature('features/smi.feature');
+
+/// The wit-bindgen auto docs interface being tested
+const SMIHtml = fs.readFileSync("build/gen/smi.html", 'utf8');
+jest.dontMock('fs');
 
 defineFeature(feature, test => {
     test('The runtime needs to know if a service is running', ({ then, and }) => {
