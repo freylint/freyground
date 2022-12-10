@@ -14,7 +14,9 @@
 <p>These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.</p>
 <h2>TODO</h2>
-<p>[] - Combine output of jest and rust tests</p>
+<p>[] - Port build system to gulp.
+[] - Combine output of jest and rust tests
+[] - Make fg-model nostd + wee-alloc</p>
 <h2>Architecture</h2>
 <img src="https://www.plantuml.com/plantuml/svg/bLJBQiCm4BpxAqHExSLV44gQGY274cWEFPGUP5jsH6p9x4effUJVgwTbEy4G7unsPxJQdR6yGKL1wQxDyCn5Ju5sfA3bkG6fHVKcMmb40HLe82RKYDL98SiJo8uHO1S6o39WfQAYQHdvq49nW_nbn3mfluh0Qz_ZYb0aeAXP1g9zlewwPt3XAE7R4d084sNRcXOBIQ5ob6887UMQpKvDnP-UoMelUgt2sJ_8nGGyQ3L6fLOJ66LvPX6sGJR0lXZ9g_mbOWco8ScrWrBLq6YQaEI14ReAP9UUwP1cNjeqKiOSbXJvP0LoTSUV20p-rCtSdnsmN_zva1r8ePZmBjGXkClScZuYiV3hnxogcoMlBBhWLTrClVB5l5S1Ir3oQbprwjvnHYVkgAN0zEcn3c7M9NwKOsAGqRzb2cyDya3oP-xEuSJbLYedj3JhGgh7X3O5bvHsy8BKjf-9rg6ULpIY8z3BNNdmvcw44ORTGskHxBV6ISqksy_Hp5ZPg_7E46d3HKFsnXEeQSbSbzZnB3YzTWLi8bpJb8ZThTtfDhCnHfcVvJy0" alt="uml diagram">
 <h3>Principles</h3>
