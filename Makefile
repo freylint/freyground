@@ -10,7 +10,8 @@ WASI_TRGT := wasm32-wasi
 
 all: docs acceptance
 
-# Acceptance testing routine
+test: test-docs acceptance
+
 acceptance: smi.md
 	npx jest
 
