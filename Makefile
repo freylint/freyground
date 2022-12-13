@@ -10,7 +10,7 @@ PROJ_GF_DIR := $(PROJ_DIR)/gridfinity
 WASM_TRGT := wasm32-unknown-unknown
 WASI_TRGT := wasm32-wasi
 
-all: docs acceptance
+all: gf docs acceptance
 
 test: test-docs acceptance
 
@@ -28,4 +28,4 @@ smi.md: $(PROJ_SMI_DIR)/fg-smi/Cargo.toml
 # Gridfinity Targets
 gf: $(PROJ_GF_DIR)/*.scad
 	mkdir -p $(GF_GEN_DIR)
-	openscad -o $(GF_GEN_DIR)/$@.stl $<
+	openscad -o $(GF_GEN_DIR)/$(basename $(notdir $<)).3mf $<
