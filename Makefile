@@ -8,7 +8,7 @@ PROJ_SMI_DIR := $(PROJ_DIR)/fg-smi
 WASM_TRGT := wasm32-unknown-unknown
 WASI_TRGT := wasm32-wasi
 
-all: acceptance
+all: docs acceptance
 
 # Acceptance testing routine
 acceptance: smi.md
