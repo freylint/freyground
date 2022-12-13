@@ -3,7 +3,9 @@ DIST_DIR := $(BUILD_DIR)/dist
 PROJ_DIR := projects
 
 RS_GEN_DIR := $(BUILD_DIR)/gen
+GF_GEN_DIR := $(BUILD_DIR)/gf
 PROJ_SMI_DIR := $(PROJ_DIR)/fg-smi
+PROJ_GF_DIR := $(PROJ_DIR)/gridfinity
 
 WASM_TRGT := wasm32-unknown-unknown
 WASI_TRGT := wasm32-wasi
@@ -23,3 +25,7 @@ docs: docs/**
 
 smi.md: $(PROJ_SMI_DIR)/fg-smi/Cargo.toml
 
+# Gridfinity Targets
+gf: $(PROJ_GF_DIR)/*.scad
+	mkdir -p $(GF_GEN_DIR)
+	openscad -o $(GF_GEN_DIR)/$@.stl $<
