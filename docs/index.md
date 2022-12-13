@@ -15,6 +15,13 @@ It uses the following buzzwords:
 These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.
 
+## Building
+> git submodule init
+
+> git submodule update
+
+> make
+
 ## TODO
 
 [] - Port build system to gulp.

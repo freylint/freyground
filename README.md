@@ -13,6 +13,16 @@
 </ul>
 <p>These decisions were made as a result of proto1 (visible at the proto1 tag) going into code rot
 after only a few weeks into development.</p>
+<h2>Building</h2>
+<blockquote>
+<p>git submodule init</p>
+</blockquote>
+<blockquote>
+<p>git submodule update</p>
+</blockquote>
+<blockquote>
+<p>make</p>
+</blockquote>
 <h2>TODO</h2>
 <p>[] - Port build system to gulp.
 [] - Combine output of jest and rust tests
