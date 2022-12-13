@@ -1,9 +1,0 @@
-
-world smi {
-    default export interface {
-        enum keepalive {
-            ping,
-            pong,
-        }
-    }
-}
