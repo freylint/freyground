@@ -14,9 +14,11 @@ all: docs acceptance
 acceptance: smi.md
 	npx jest
 
+test-docs:
+	npx textlint docs/**.md
+
 docs: docs/**
 	node scripts/docbuild.js
 
-smi.md: $(PROJ_SMI_DIR)/smi.wit 
-	wit-bindgen markdown $< --out-dir $(RS_GEN_DIR)
+smi.md: $(PROJ_SMI_DIR)/fg-smi/Cargo.toml
 
