@@ -9,8 +9,9 @@ PROJ_GF_DIR := $(PROJ_DIR)/gridfinity
 
 WASM_TRGT := wasm32-unknown-unknown
 WASI_TRGT := wasm32-wasi
+GF_MODULES := $(GF_GEN_DIR)/hairtie_holder.3mf $(GF_GEN_DIR)/quad_bin.3mf
 
-all: gf docs acceptance
+all: gridfinity docs acceptance
 
 test: test-docs acceptance
 
@@ -23,9 +24,10 @@ test-docs:
 docs: docs/**
 	node scripts/docbuild.js
 
-smi.md: $(PROJ_SMI_DIR)/fg-smi/Cargo.toml
+smi.md: $(PROJ_SMI_DIR)/Cargo.toml
 
-# Gridfinity Targets
-gf: $(PROJ_GF_DIR)/*.scad
+# Gridfinity
+gf: gridfinity
+gridfinity:
 	mkdir -p $(GF_GEN_DIR)
-	openscad -o $(GF_GEN_DIR)/$(basename $(notdir $<)).3mf $<
+	node scripts/gridfinity-build.js
