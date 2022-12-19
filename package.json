@@ -25,10 +25,6 @@
       "^.+\\.jsx?$": "babel-jest"
     }
   },
-  "scripts": {
-    "test": "jest",
-    "build-docs": "node scripts/docbuild.js"
-  },
   "devDependencies": {
     "@babel/preset-env": "^7.20.2",
     "@cucumber/cucumber": "^8.9.0",
