@@ -1,5 +1,5 @@
 
-$fn = 64;
+$fn = 128;
 
 module tube() {
     height = 45;
@@ -19,13 +19,13 @@ module tube() {
     }
 }
 
-/// Wedge with internal locking ring
-/// 
-/// @param zoff - Offset of locking ring from x/y plane
-module shell (zoff) {
-    union() {
-        tube();
-        //todo
+module ring (r,zoff) {
+    translate([0,0,zoff]) {
+        rotate_extrude() {
+            translate([r,0,0]) {
+                circle(0.4);
+            }
+        }
     }
 }
 
@@ -54,7 +54,14 @@ module cutouts(f, height) {
     }
 }
 
-difference() {
-    shell();
-    cutouts(0.01, 45);
+union() {
+    difference() {
+        tube();
+        cutouts(0.01, 45);
+    }
+    difference() {
+        ring(12.5, 12);
+        cutouts(0.01, 45);
+    }
+    
 }
