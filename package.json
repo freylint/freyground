@@ -12,7 +12,8 @@
   },
   "homepage": "https://quak.dev",
   "workspaces": [
-    "projects/fg-cad"
+    "projects/fg-cad",
+    "projects/docs"
   ],
   "jest": {
     "verbose": true,
