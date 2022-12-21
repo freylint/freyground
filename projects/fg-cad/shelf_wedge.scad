@@ -4,9 +4,9 @@ $fn = 128;
 module tube() {
     height = 45;
     // Inner & Outer Diameters, upper / lower
-    id = 12.5;
-    od_u =15;
-    od_l = 14;
+    id = 12.6;
+    od_u =15.1;
+    od_l = 13.9;
     // Floating point imprecision compensation constant
     f = 0.01;
     difference() {
@@ -23,7 +23,7 @@ module ring (r,zoff) {
     translate([0,0,zoff]) {
         rotate_extrude() {
             translate([r,0,0]) {
-                circle(0.4);
+                circle(0.75);
             }
         }
     }
