@@ -25,8 +25,11 @@ after only a few weeks into development.
 ## TODO v0.0.1
 
 [] - Make build system work w/ npm workspaces
+
 [] - Port build system to gulp.
+
 [] - Combine output of jest and rust tests
+
 [] - Make fg-model nostd + wee-alloc
 
 !!!include(philosophy.md)!!!
