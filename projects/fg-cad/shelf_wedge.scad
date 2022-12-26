@@ -4,9 +4,9 @@ $fn = 128;
 module tube() {
     height = 45;
     // Inner & Outer Diameters, upper / lower
-    id = 12.6;
-    od_u =15.1;
-    od_l = 13.9;
+    id = 12.8;
+    od_u =14.8;
+    od_l = 13.5;
     // Floating point imprecision compensation constant
     f = 0.01;
     difference() {
