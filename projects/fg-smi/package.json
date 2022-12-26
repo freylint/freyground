@@ -1,0 +1,20 @@
+{
+  "name": "fg-smi",
+  "version": "0.0.1",
+  "description": "Standard messaging interface for freyground.com microservices.",
+  "devDependencies": {},
+  "scripts": {
+    "build": "cargo b -r --target-dir ../../build/ --target wasm32-unknown-unknown",
+    "test": "cargo test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freylint/freyground.git"
+  },
+  "author": "Freylint",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/freylint/freyground/issues"
+  },
+  "homepage": "https://github.com/freylint/freyground#readme"
+}
