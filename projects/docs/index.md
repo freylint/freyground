@@ -28,8 +28,8 @@ after only a few weeks into development.
 [] - Combine output of jest and rust tests
 [] - Make fg-model nostd + wee-alloc
 
-!!!include(docs/philosophy.md)!!!
+!!!include(philosophy.md)!!!
 
-!!!include(docs/architecture.md)!!!
+!!!include(architecture.md)!!!
 
-!!!include(docs/historical.md)!!!
+!!!include(historical.md)!!!
