@@ -2,9 +2,9 @@
   "name": "fg-runtime",
   "version": "0.0.1",
   "description": "Backend runtime for freyground.com",
-  "devDependencies": {},
   "scripts": {
     "build": "cargo b -r --target-dir ../../build/",
+    "package": "mkdir -p ../../dist && cp ../../build/release/fg-runtime ../../dist/",
     "test": "cargo test"
   },
   "repository": {
