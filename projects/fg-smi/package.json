@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/freylint/freyground/issues"
   },
-  "homepage": "https://github.com/freylint/freyground#readme"
+  "homepage": "https://github.com/freylint/freyground#readme",
+  "build": {
+    "dependsOn": [
+      {
+        "projects": "fg-runtime",
+        "target": "build"
+      }
+    ]
+  }
 }

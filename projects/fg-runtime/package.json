@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/freylint/freyground/issues"
   },
-  "homepage": "https://github.com/freylint/freyground#readme"
+  "homepage": "https://github.com/freylint/freyground#readme",
+  "outputs": ["{workspaceRoot}/build/release/fg-runtime"]
 }
