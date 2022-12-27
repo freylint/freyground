@@ -5,11 +5,6 @@
 
 #![warn(clippy::all)]
 
-use wasmer::{Store, Module, Instance, Value, imports};
-use wasmer::FunctionEnv;
-use tokio::fs::File;
-use tokio::io::{self, AsyncReadExt};
-
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
@@ -18,7 +13,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 pub(crate) mod wasm_load {
     //! Wasm module loading logic
     
-    pub use manifest::*;
+    pub(crate) use manifest::*;
     
     pub(crate) mod manifest {
         //! Service manifest module
@@ -44,7 +39,7 @@ pub(crate) mod wasm_load {
         }
         
         #[cfg(test)]
-        mod manifest_tests {
+        mod test {
             use super::*;
 
             #[test]
@@ -54,5 +49,35 @@ pub(crate) mod wasm_load {
                 assert_eq!(man, ServiceManifest::default());
             }
         }
+    }
+
+    pub(crate) mod module {
+        //! Wasm moudle compilation module
+        use wasmer::{Store, Module};
+        
+        /// Compiled runtime service module
+        pub(crate) struct ServiceModule<'srv> {
+            store: &'srv mut Store,
+            module: &'srv mut Module,
+        }
+
+        impl<'srv> ServiceModule<'srv> {
+            fn new() -> ServiceModule<'srv> {
+                Self {
+                    store: 
+                }
+            }
+        }
+
+
+        #[cfg(test)]
+        mod test {
+            use super::*;
+
+            #[test]
+            fn srv_mod_constructor() {
+            }
+        }
+
     }
 }
