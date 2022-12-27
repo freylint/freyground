@@ -1,14 +1,12 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use wasm_bindgen::prelude::*;
+
+/// Message for checking if running applications are still responding.
+#[wasm_bindgen]
+pub enum KeepAliveMsg {
+    Ping,
+    Pong
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
 }
