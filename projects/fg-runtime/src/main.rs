@@ -18,35 +18,41 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 pub(crate) mod wasm_load {
     //! Wasm module loading logic
     
-    /// A LUT of file paths to load services from.
-    #[derive(Debug, PartialEq)]
-    pub(crate) struct ServiceManifest<'manifest> {
-        fg_smi: &'manifest str,
-    }
+    pub use manifest::*;
+    
+    pub(crate) mod manifest {
+        //! Service manifest module
 
-    impl<'manifest> ServiceManifest<'manifest> {
-        fn new(smi: &'manifest str) -> Self{
-            Self {
-                fg_smi: smi,
+        /// A LUT of file paths to load services from.
+        #[derive(Debug, PartialEq)]
+        pub(crate) struct ServiceManifest<'manifest> {
+            fg_smi: &'manifest str,
+        }
+
+        impl<'manifest> ServiceManifest<'manifest> {
+            fn new(smi: &'manifest str) -> Self{
+                Self {
+                    fg_smi: smi,
+                }
             }
         }
-    }
 
-    impl Default for ServiceManifest<'static> {
-        fn default() -> ServiceManifest<'static> {
-            Self::new("services/fg_smi.wasm")
+        impl Default for ServiceManifest<'static> {
+            fn default() -> ServiceManifest<'static> {
+                Self::new("services/fg_smi.wasm")
+            }
         }
-    }
-    
-    #[cfg(test)]
-    mod manifest_tests {
-        use super::*;
+        
+        #[cfg(test)]
+        mod manifest_tests {
+            use super::*;
 
-        #[test]
-        fn srv_man_constructors() {
-            let man = ServiceManifest::new("services/fg_smi.wasm");
+            #[test]
+            fn srv_man_constructors() {
+                let man = ServiceManifest::new("services/fg_smi.wasm");
 
-            assert_eq!(man, ServiceManifest::default());
+                assert_eq!(man, ServiceManifest::default());
+            }
         }
     }
 }
