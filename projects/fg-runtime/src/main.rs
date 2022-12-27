@@ -26,13 +26,13 @@ pub(crate) mod wasm_load {
         /// A LUT of file paths to load services from.
         #[derive(Debug, PartialEq)]
         pub(crate) struct ServiceManifest<'manifest> {
-            fg_smi: &'manifest str,
+            path: &'manifest str,
         }
 
         impl<'manifest> ServiceManifest<'manifest> {
-            fn new(smi: &'manifest str) -> Self{
+            fn new(path: &'manifest str) -> Self{
                 Self {
-                    fg_smi: smi,
+                    path,
                 }
             }
         }
