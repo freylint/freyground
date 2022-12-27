@@ -1,0 +1,17 @@
+{
+  "name": "fgrt",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "description": "Freyground monorepo microservice runtime.",
+  "private": true,
+  "scripts": {
+    "lint": "cargo clippy -- -Dwarnings",
+    "build": "cargo b -r",
+    "package": "mkdir -p ../../build/dist && cp ../../build/cache/release/fgrt ../../build/dist",
+    "test": "cargo test",
+    "format": "cargo fmt"
+  },
+  "dependencies": {
+    "smi": "*"
+  }
+}

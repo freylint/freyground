@@ -1,0 +1,13 @@
+{
+  "name": "smi",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "private": true,
+  "scripts": {
+    "lint": "cargo clippy -- -Dwarnings",
+    "build": "cargo b -r",
+    "package": "",
+    "test": "cargo test",
+    "format": "cargo fmt"
+  }
+}

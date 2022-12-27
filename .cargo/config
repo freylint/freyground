@@ -1,0 +1,6 @@
+[build]
+target-dir = "build/cache"
+
+[profile.release]
+lto = true
+opt-level = "s"

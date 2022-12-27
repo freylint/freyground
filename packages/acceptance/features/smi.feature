@@ -10,6 +10,6 @@ Feature: Standard messaging interface
 
   Scenario: service and blackboard need to communicate
     Then SMI provides blackboard_requests enum
-  
+
   Scenario: service needs to respond to request from blackboard
     Then SMI provides blackboard_responses variant

@@ -1,0 +1,10 @@
+{
+  "name": "cad",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "description": "Personal cad projects.",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js . ../../build/cad/"
+  }
+}
