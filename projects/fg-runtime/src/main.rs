@@ -38,7 +38,7 @@ mod wasm_load {
     }
     
     #[cfg(test)]
-    mod test {
+    mod manifest_tests {
         use super::*;
 
         #[test]
