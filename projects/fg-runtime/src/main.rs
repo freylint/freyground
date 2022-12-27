@@ -14,7 +14,8 @@ use tokio::io::{self, AsyncReadExt};
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     Ok(())
 }
-mod wasm_load {
+
+pub(crate) mod wasm_load {
     //! Wasm module loading logic
     
     /// A LUT of file paths to load services from.
