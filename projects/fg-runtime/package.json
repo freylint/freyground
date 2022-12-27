@@ -36,6 +36,10 @@
       {
         "projects": "self",
         "target": "package"
+      },
+      {
+        "projects": "fg-smi",
+        "target": "fg-smi:package"
       }
     ]
   }
