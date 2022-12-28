@@ -6,7 +6,9 @@
   "private": true,
   "devDependencies": {
     "nx": "15.4.1",
-    "prettier": "^2.6.2"
+    "prettier": "^2.6.2",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "workspaces": [
     "packages/*"

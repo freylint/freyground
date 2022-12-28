@@ -7,7 +7,6 @@
   "scripts": {
     "lint": "cargo clippy -- -Dwarnings",
     "build": "cargo b -r",
-    "package": "mkdir -p ../../build/dist && cp ../../build/cache/release/fgrt ../../build/dist",
     "test": "cargo test",
     "format": "cargo fmt"
   },

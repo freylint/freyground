@@ -5,8 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "cargo clippy -- -Dwarnings",
-    "build": "wasm-pack build --out-dir ../../build/cache/lib/smi/",
-    "package": "mkdir -p ../../build/dist/lib && cp -r ../../build/cache/lib/smi ../../build/dist/lib/smi",
+    "build": "wasm-pack build",
     "test": "cargo test",
     "format": "cargo fmt"
   }
