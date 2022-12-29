@@ -8,7 +8,7 @@ const path = require("path");
 const feature = loadFeature("features/smi.feature");
 
 /// Boostrap the WASM module being tested
-describe("SMI Tests", () => {
+describe("SMI Acceptance Tests", () => {
   let smi;
 
   beforeAll(async () => {

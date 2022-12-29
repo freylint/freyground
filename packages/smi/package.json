@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "cargo clippy -- -Dwarnings",
-    "build": "wasm-pack build",
+    "build": "cargo b -r --target wasm32-unknown-unknown",
     "test": "cargo test",
     "format": "cargo fmt"
   }
