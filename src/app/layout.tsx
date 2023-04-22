@@ -1,9 +1,9 @@
-import NavBar from './components/NavBar';
-import './globals.css';
+import NavBar from "./components/NavBar";
+import "./globals.css";
 
 export const metadata = {
-  title: 'Freyground',
-  description: 'Personal playground, blog, and projects',
+  title: "Freyground",
+  description: "Personal playground, blog, and projects",
 };
 
 export default function RootLayout({

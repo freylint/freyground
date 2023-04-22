@@ -20,34 +20,56 @@ export default function NavBar() {
 }
 
 export function Burger() {
-  return(
+  return (
     <button className="btn btn-square btn-ghost">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        className="inline-block w-5 h-5 stroke-current"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        >
+        </path>
+      </svg>
     </button>
-  )
+  );
 }
 
 export function NavButtons() {
   // Render the buttons
-  return(
+  return (
     <nav className="btn-group">
       {Statics.ManuallyNavigablePages.map((page) => {
         return (
-          <input type="radio" name="options" key={page} data-title={page} className="btn" />
-        )
+          <input
+            type="radio"
+            name="options"
+            key={page}
+            data-title={page}
+            className="btn"
+          />
+        );
       })}
     </nav>
-  )
+  );
 }
 
 export function SearchBar() {
-  return(
+  return (
     <div className="form-control flex flex-row">
-      <input type="text" placeholder="Search" className="input input-bordered" />
+      <input
+        type="text"
+        placeholder="Search"
+        className="input input-bordered"
+      />
       <div className="navbar-end">
         <a className="btn">Search</a>
       </div>
     </div>
-  )
+  );
 }
-

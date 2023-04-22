@@ -3,7 +3,7 @@
 import "./Hero.css";
 
 export default function Hero() {
-  return(
+  return (
     <div className="hero min-h-screen bg-base-200 splash-grid">
       <div className="hero-overlay " />
       <div className="hero-content text-center">

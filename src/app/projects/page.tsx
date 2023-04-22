@@ -1,6 +1,5 @@
-
 export default function ProjectPage() {
-  return(
+  return (
     <main>
       <p>Projects page</p>
     </main>
