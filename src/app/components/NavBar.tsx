@@ -1,6 +1,6 @@
 //! Navigation bar component
 
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
 import Statics from "../../statics.json";
@@ -56,20 +56,19 @@ export function NavButtons() {
             key={page}
             data-title={page}
             className="btn"
-            onClick= {() =>{
+            onClick={() => {
               if (page == "Home") {
                 router.push("/");
               } else {
-                router.push("/" + page.toLowerCase())}
+                router.push("/" + page.toLowerCase());
               }
-            }
+            }}
           />
         );
       })}
     </nav>
   );
 }
-
 
 export function SearchBar() {
   return (
