@@ -7,7 +7,7 @@ export default function NavBar() {
     <div className="navbar bg-base-100">
       <div className="navbar-start">
         <Burger />
-        <a className="btn btn-ghost normal-case text-xl">Freyground</a>
+        <a className="btn btn-ghost normal-case text-xl">RelayGround</a>
       </div>
       <div className="navbar-center">
         <NavButtons />
