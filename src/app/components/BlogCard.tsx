@@ -8,6 +8,7 @@ export default function BlogCard(blog: { blog: BlogPost }) {
     <article className="card bg-base-100 shadow-xl">
       <div className="card-body">
         <h2 className="card-title">{blog.blog.title}</h2>
+        <blog.blog.Component />
       </div>
     </article>
   );

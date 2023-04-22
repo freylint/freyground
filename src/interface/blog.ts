@@ -3,12 +3,11 @@
 /// A renderable blog post component
 export interface BlogPost {
   // Meta information
-  title: String,
-  date: Date,
-  blurb: String,
-  draft: boolean,
+  title: String;
+  date: Date;
+  blurb: String;
+  draft: boolean;
 
   // React component
-  component: React.FC,
+  Component: React.FC;
 }
-

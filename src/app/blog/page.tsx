@@ -26,7 +26,7 @@ const STechExit: BlogPost = {
   date: new Date(2023, 4, 22),
   blurb: "Giving myself the exit interview I didn't earn.",
   draft: true,
-  component: () => {
+  Component: () => {
     return (
       <article>
         <p>This is the Stetch blogpost</p>
