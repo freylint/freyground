@@ -1,5 +1,8 @@
 //! Navigation bar component
 
+"use client"
+
+import { useRouter } from "next/navigation";
 import Statics from "../../statics.json";
 
 export default function NavBar() {
@@ -41,6 +44,7 @@ export function Burger() {
 }
 
 export function NavButtons() {
+  const router = useRouter();
   // Render the buttons
   return (
     <nav className="btn-group">
@@ -52,12 +56,20 @@ export function NavButtons() {
             key={page}
             data-title={page}
             className="btn"
+            onClick= {() =>{
+              if (page == "Home") {
+                router.push("/");
+              } else {
+                router.push("/" + page.toLowerCase())}
+              }
+            }
           />
         );
       })}
     </nav>
   );
 }
+
 
 export function SearchBar() {
   return (

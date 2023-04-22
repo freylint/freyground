@@ -2,30 +2,24 @@
 
 import BlogCard from "../components/BlogCard";
 import { BlogPost } from "@site/interface/blog";
+import { Opener, IOpener } from "../components/Opener";
 
 export default function Blog() {
+  const opener: IOpener = {
+      title: "Freyground Blog Page.",
+      Content: () => {
+        return(<p>Welcome to the RelayGround blog page!</p>);
+      },
+  }
+
   return (
     <main>
-      <Opener />
+      <Opener title={opener.title} Content={opener.Content} />
       <BlogCard blog={STechExit} />
     </main>
   );
 }
 
-/// Opening blurb for the blog page
-function Opener() {
-  return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title">The Freyground Blog</h2>
-        <p>
-          Welcome to the Freyground blog! My personal place to talk about life,
-          tech, and the struggles of an eccentric wannabe test engineer.
-        </p>
-      </div>
-    </div>
-  );
-}
 
 const STechExit: BlogPost = {
   title: "Exit Interview",
