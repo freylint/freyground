@@ -1,9 +1,7 @@
 //! Blog browsing page
 
 import BlogCard from "../components/BlogCard";
-
-import STechExit from "./posts/stech_exit";
-
+import { BlogPost } from "@site/interface/blog";
 
 export default function Blog() {
   return(
@@ -29,3 +27,17 @@ function Opener() {
     </div>
   );
 }
+
+const STechExit: BlogPost = {
+    title: "Exit Interview",
+    date: new Date(2023, 4, 22),
+    blurb: "Giving myself the exit interview I didn't earn.",
+    draft: true,
+    component: () => {
+      return(
+        <article>
+          <p> This is the Stetch blogpost </p>
+        </article>
+      )
+    },
+};
