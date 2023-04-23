@@ -27,17 +27,22 @@ const STechExit: BlogPost = {
   draft: true,
   Component: () => {
     return (
-      <article>
-        <h3>
+      <article className="font-serif">
+        <h3 className="font-sans font-bold">
           An Attitude Adjustment
         </h3>
         <p>
           When I was was 19 years old I got got really into a game called
           Tekken. I played and played, even to the point where I travelled
           around to fight in tournaments. The most frequent of which was
-          my localish tournament, DownTown BeatDown, which mostly consisted of
+          my localish tournament, Downtown Beatdown, which mostly consisted of
           20 something men who viewed the game as a fun way to relax.
-          I was not so fortunate. 
+          I was not so wise.
+        </p>
+        <p>
+          It was after these tournaments that I often found myself in emotional
+          distress. After all, If I had put over 500 hours into a game, why am
+          I not seeing any improvement?
         </p>
       </article>
     );
