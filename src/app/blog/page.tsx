@@ -2,15 +2,15 @@
 
 import BlogCard from "../components/BlogCard";
 import { BlogPost } from "@site/interface/blog";
-import { Opener, IOpener } from "../components/Opener";
+import { IOpener, Opener } from "../components/Opener";
 
 export default function Blog() {
   const opener: IOpener = {
-      title: "Freyground Blog Page.",
-      Content: () => {
-        return(<p>Welcome to the RelayGround blog page!</p>);
-      },
-  }
+    title: "Freyground Blog",
+    Content: () => {
+      return <p>Welcome to the RelayGround blog page!</p>;
+    },
+  };
 
   return (
     <main>
@@ -20,16 +20,25 @@ export default function Blog() {
   );
 }
 
-
 const STechExit: BlogPost = {
-  title: "Exit Interview",
+  title: "Humility and Pride",
   date: new Date(2023, 4, 22),
   blurb: "Giving myself the exit interview I didn't earn.",
   draft: true,
   Component: () => {
     return (
       <article>
-        <p>This is the Stetch blogpost</p>
+        <h3>
+          An Attitude Adjustment
+        </h3>
+        <p>
+          When I was was 19 years old I got got really into a game called
+          Tekken. I played and played, even to the point where I travelled
+          around to fight in tournaments. The most frequent of which was
+          my localish tournament, DownTown BeatDown, which mostly consisted of
+          20 something men who viewed the game as a fun way to relax.
+          I was not so fortunate. 
+        </p>
       </article>
     );
   },
