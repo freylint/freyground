@@ -3,6 +3,7 @@
 import BlogCard from "../components/BlogCard";
 import { BlogPost } from "@site/interface/blog";
 import { IOpener, Opener } from "../components/Opener";
+import Background from "../components/Background";
 
 export default function Blog() {
   const opener: IOpener = {
@@ -15,35 +16,40 @@ export default function Blog() {
   return (
     <main>
       <Opener title={opener.title} Content={opener.Content} />
-      <BlogCard blog={STechExit} />
+      <BlogCard blog={WorkplaceTension} />
+      <Background />
     </main>
   );
 }
 
-const STechExit: BlogPost = {
-  title: "Humility and Pride",
-  date: new Date(2023, 4, 22),
-  blurb: "Giving myself the exit interview I didn't earn.",
+const WorkplaceTension: BlogPost = {
+  title: "Wound Like a Guitar String",
+  date: new Date(2023, 7, 28),
+  blurb: "Moving on and getting over it.",
   draft: true,
   Component: () => {
     return (
-      <article className="font-serif">
-        <h3 className="font-sans font-bold">
-          An Attitude Adjustment
-        </h3>
-        <p>
-          When I was was 19 years old I got got really into a game called
-          Tekken. I played and played, even to the point where I travelled
-          around to fight in tournaments. The most frequent of which was
-          my localish tournament, Downtown Beatdown, which mostly consisted of
-          20 something men who viewed the game as a fun way to relax.
-          I was not so wise.
+      <article className="max-w-xl font-serif">
+        <p className="indent-4">
+          I was set out to placate my mother. I wound up driving sprinter van
+          between all the businesses that needed their letters express
+          delivered. The job just never felt right to me. I couldn't say if it
+          was the five hours of sleep or the naivety of my less misanthropic
+          years, but I managed to make getting paid to listen to the radio and
+          lift a 5lb box a few times a day into an olympic sport. This
+          <i>"talent"</i> isn't something that's ever faded with time. It's even
+          made this site a box of spiders.
         </p>
-        <p>
-          It was after these tournaments that I often found myself in emotional
-          distress. After all, If I had put over 500 hours into a game, why am
-          I not seeing any improvement?
+        <p className="indent-4">
+          People always tell me, "Things like this go with age". One lady even
+          told me "It'll go away in a recession or two". Am I deranged? Do
+          things really just work out for these people? Surely their safety
+          margins must be narrowing with the decades, right? Maybe I'd feel the
+          same if I'd landed that cozy programming job I wasted my prime years
+          working for, just for the market to collapse from obvious consequences
+          of actions anyone with an eye not fixed on their own wallets.
         </p>
+        <p className="indent-4"></p>
       </article>
     );
   },
