@@ -3,10 +3,10 @@ import {Statics} from "./statics";
 
 export function StageOne() {
     return (
-        <>
-        <Header/>
-        <Main/>
-        </>
+        <div>
+            <Header/>
+            <Main/>
+        </div>
     );
 }
 
