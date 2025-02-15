@@ -1,0 +1,8 @@
+
+# Build artifacts
+**/node_modules
+
+# IDE Configurations
+**/.idea
+**/.vs
+**/.vscode
