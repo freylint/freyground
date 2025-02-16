@@ -1,6 +1,9 @@
 
 # Build artifacts
 **/node_modules
+**/build/
+**/dest/
+**/out/
 
 # IDE Configurations
 **/.idea
