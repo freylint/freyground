@@ -1,0 +1,17 @@
+
+[Unit]
+Description=Freyground NGINX Webserver
+
+[Container]
+Label=app=fg-web
+ContainerName=fg-web
+Image=docker.io/library/nginx:1.27
+Timezone=local
+PublishPort=8080:80
+Volume=/srv/fg-web/:/usr/share/nginx/html/:Z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target
