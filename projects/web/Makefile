@@ -28,6 +28,7 @@ install-enable:
 		systemctl start ${SRV_NAME}.service
 
 remove:
+		systemctl stop ${SRV_NAME}.service || true
 		systemctl disable ${SRV_NAME}.service || true
 		rm -rf ${SRV_DIR}
 		rm -rf ${QUADLET_DIR}/${SRV_NAME}.container
