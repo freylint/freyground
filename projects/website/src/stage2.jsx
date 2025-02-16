@@ -6,10 +6,10 @@ export function StageTwo() {
         <html lang="en">
         <Head/>
         <body>
-        <article id="first" display="none">
+        <article id="first">
             <StageOne/>
         </article>
-        <article id="second" display="none">
+        <article id="second">
             <StageOne/>
         </article>
         </body>
@@ -24,6 +24,7 @@ function Head() {
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
             <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
             <meta name="description" content=""/>
+            <link rel="icon" href="public/favicon.svg" sizes="any" type="image/svg+xml"/>
             <style>{Statics.normalize_css}</style>
             <style>{Statics.pure_css}</style>
             <style>{Statics.style}</style>

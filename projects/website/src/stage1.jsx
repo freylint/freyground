@@ -14,6 +14,7 @@ export function StageOne() {
 function Header() {
     return (
         <header className="header">
+            <img  alt="Freyground Logo" src="public/favicon.svg"/>
             <h1>{Statics.title}</h1>
             <button>
                 About
