@@ -1,0 +1,25 @@
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    margin-inline: 2rem;
+    margin-bottom: 0.7rem;
+
+    * {
+        margin: 0;
+        height: 32px;
+    }
+
+}
+
+p {
+    text-indent: 2rem;
+}
+
+hr {
+    margin: 0;
+}
+
+
+

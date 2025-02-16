@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charSet="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta httpEquiv="X-UA-Compatible" content="ie=edge"/>
+    <meta name="description" content=""/>
+    <meta name="color-scheme" content="light dark">
+    <link rel="icon" href="favicon.svg" sizes="any" type="image/svg+xml"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+          integrity="sha512-q6WgHqiHlKyOqslT/lgBgodhd03Wp4BEqKeW6nNtlOY4quzyG3VoQKFrieaCeSnuVseNKRGpGeDU3qPmabCANg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Freyground</title>
+</head>
+<body>
+<header>
+    <img src="favicon.svg" alt="logo">
+    <h1>Freyground</h1>
+</header>
+<hr/>
+<main class="container">
+    <article>
+        <h3>
+            Welcome
+        </h3>
+        <p>
+            I'm an IT Technician, Maker, and Programmer experimenting at the
+            frontiers of the homelab. Is it possible for one man to maintain
+            a technology stack competitive with a small team? No!
+            Attempt available on
+            <a href="https://github.com/freylint/freyground">
+                GitHub
+            </a>.
+            Service status and landing information is available in the
+            <a href="#dashboard">
+                Dashboard
+            </a>
+            below.
+        </p>
+    </article>
+    <article>
+        <h3>Dashboard</h3>
+        <section class="grid">
+            <button>
+                <h5>Web Server</h5>
+                <p>TODO</p>
+            </button>
+            <button>
+                <h5>IPA</h5>
+                <p>TODO</p>
+            </button>
+            <button>
+                <h5>NFS</h5>
+                <p>TODO</p>
+            </button>
+            <button>
+                <h5>Home Assistant</h5>
+                <p>TODO</p>
+            </button>
+            <button>
+                <h5>DNS</h5>
+                <p>TODO</p>
+            </button>
+        </section>
+    </article>
+    <article>
+        <h3>Projects</h3>
+        <section class="grid">
+            <button
+                onclick="window.open('https://github.com/freylint/freyground/tree/main/projects/website', '_blank');">
+                Webpage
+            </button>
+            <button onclick="window.open('https://github.com/freylint/freyground/tree/main/projects/infra', '_blank');">
+                Infrastructure Automation
+            </button>
+        </section>
+    </article>
+    <article>
+        <h3>Blog</h3>
+        <section class="grid">
+            <article>
+                <h4>Suck Less, Selfless, and the Trailing Edge</h4>
+                <p>
+                    I've been attempting to understand software stability for many years.
+                    For about a decade now, I've been using correctness as primary principle
+                    driving engineering decisions. This drove decisions to use technologies
+                    like Rust, NixOS, and Ansible. On the surface this
+                    suggests an enthusiasm for functional programming and declarativeness.
+                    After almost 5 years using these technologies for the creation of the Freyground project,
+                    I have determined that they ultimately have limited utility compared to the
+                    legacy systems that I eschewed in the name of correctness.
+
+                    Rust is a systems programming language that's extremely flexible until the
+                    layers of abstraction common in its users library design become too burdensome to work around.
+
+                    NixOS provides the promise of a reproducible build system, but
+                    fails due to lack of general adoption and platform support.
+                    If nix and rpm/apt were in opposite places, we would be in a better world.
+                    We are in the world where reproducibility is done with domain specific
+                    tools that have become a requirement for cooperation in the wider software ecosystem.
+
+                    Ansible has it's place. That place is not a homelab. It makes the promise
+                    of declarative configuration management. It fails to meet up to this promise while
+                    making it harder to work with the underlying system due to the rigidity of the
+                    way it handles shell commands. Modular composable shell calls in the form of:
+                    <br/><code>ssh -c user@host 'sh -c "foo"'</code><br/> is better handled by general
+                    purpose tools like Make and Python in the homelab.
+                </p>
+            </article>
+        </section>
+    </article>
+</main>
+</body>
+</html>
