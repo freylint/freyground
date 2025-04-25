@@ -1,4 +1,5 @@
 ---
 - name: revproxy/tunnel CD
+  hosts: docker_build
   roles:
-  - revproxytunnel-ci
+  - revproxytunnel_deploy
