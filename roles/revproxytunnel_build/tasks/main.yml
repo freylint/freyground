@@ -12,6 +12,13 @@
     # TODO Minimise permissions
     mode: "644"
 
+- name: Template the Caddyfile
+  ansible.builtin.template:
+    src: Caddyfile.j2
+    dest: "{{ dockerfile_dir.path }}/Caddyfile"
+    # TODO Minimise permissions
+    mode: "644"
+
 - name: Build Image
   community.docker.docker_image:
     name: "{{ revproxytunnel_build_image_name }}"
