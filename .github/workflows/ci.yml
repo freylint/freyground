@@ -9,6 +9,7 @@ on:
 jobs:
   bootstrap:
     runs-on: ubuntu-24.04
+    container: debian:bookworm
     steps:
       - uses: actions/checkout@v4
       - name: Bootstrap ansible
