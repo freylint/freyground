@@ -5,4 +5,7 @@ EXPOSE 80
 EXPOSE 443
 EXPOSE 51820
 
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY wg0.conf /etc/wireguard/wg0.conf
+
 RUN apt update && apt install wireguard caddy -y; rm -rf /etc/apt/cache

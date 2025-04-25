@@ -19,6 +19,13 @@
     # TODO Minimise permissions
     mode: "644"
 
+- name: Template the Wireguard Config
+  ansible.builtin.template:
+    src: wg0.conf.j2
+    dest: "{{ dockerfile_dir.path }}/wg0.conf"
+    # TODO Minimise permissions
+    mode: "644"
+
 - name: Build Image
   community.docker.docker_image:
     name: "{{ revproxytunnel_build_image_name }}"
