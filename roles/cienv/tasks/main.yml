@@ -1,4 +1,10 @@
 ---
+
+- name: Update apt cache
+  become: true
+  ansible.builtin.apt:
+    update_cache: true
+
 - name: Install revproxytunnel env
   become: true
   ansible.builtin.apt:
