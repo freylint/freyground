@@ -1,0 +1,6 @@
+---
+- name: Reverse Proxy and Tunnel CI
+  hosts: docker_build
+  roles:
+    - cienv
+    - revproxytunnel_build

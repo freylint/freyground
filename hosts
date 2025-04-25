@@ -1,0 +1,5 @@
+[docker_build]
+localhost ansible_connection=local
+
+[revproxytunnel_deployment]
+rphost.freyground.com

@@ -1,0 +1,15 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  bootstrap:
+    runs-on: ansible/ansible:ubuntu1604py3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Bootstrap environment
+        run: make ci
