@@ -13,6 +13,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Bootstrap ansible
-        run: sudo apt-get update; sudo apt-get install -y ansible
+        run: apt-get update; apt-get install -y ansible
       - name: Bootstrap project environment
         run: make ci
