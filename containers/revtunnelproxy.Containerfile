@@ -1,0 +1,7 @@
+FROM debian:trixie-slim
+
+EXPOSE 80
+EXPOSE 443
+EXPOSE 51820
+
+RUN apt update && apt install wireguard caddy -y
