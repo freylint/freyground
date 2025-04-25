@@ -7,6 +7,9 @@
 
 - name: Install revproxytunnel env
   become: true
+  when: lookup('env', 'IS_GH_RUNNER') is not defined
+  tags:
+    - optional
   ansible.builtin.apt:
     package:
       - docker.io
@@ -14,6 +17,7 @@
 
 - name: Start revproxytunnel env
   become: true
+  when: lookup('env', 'IS_GH_RUNNER') is not defined
   ansible.builtin.systemd_service:
     unit: docker
     state: started

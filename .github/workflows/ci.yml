@@ -10,6 +10,10 @@ jobs:
   bootstrap:
     runs-on: ubuntu-24.04
     container: debian:bookworm
+    services:
+      docker:
+        image: docker:dind
+        options: --privileged --shm-size 2g 
     steps:
       - uses: actions/checkout@v4
       - name: Bootstrap ansible
