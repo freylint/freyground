@@ -11,5 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Bootstrap environment
+      - name: Bootstrap ansible
+        run: sudo apt-add-repository ppa:ansible/ansible; sudo apt-get update; sudo apt install -y ansible;
+      - name: Bootstrap project environment
         run: make ci
