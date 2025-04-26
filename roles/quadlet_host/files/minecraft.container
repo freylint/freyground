@@ -1,0 +1,16 @@
+[Unit]
+Description=Freyground Minecraft Instance
+
+[Container]
+Label=minecraft
+ContainerName=minecraft
+Image=docker.io/itzg/minecraft-server
+PublishPort=25565:25565
+Volume=/srv/data/minecraft:/data
+Environment=EULA=TRUE
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

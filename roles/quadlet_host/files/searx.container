@@ -1,0 +1,16 @@
+[Unit]
+Description=Freyground Searx Instance
+
+[Container]
+Label=searx
+ContainerName=searx
+Image=docker.io/searx/searx:latest
+PublishPort=3002:8080
+Volume=/srv/data/dashy:/app/user-data/
+EnvironmentFile=/srv/.env
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

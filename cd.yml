@@ -1,5 +1,5 @@
 ---
-- name: revproxy/tunnel CD
-  hosts: docker_build
+- name: Continuous Deployment
+  hosts: vnet_controller vnet_lan
   roles:
-  - revproxytunnel_deploy
+    - vnet

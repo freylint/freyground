@@ -1,5 +1,14 @@
-[docker_build]
+[default]
+localhost ansible_connection=local
+hl.freyground.com
+gw1.freyyground.com
+gw2.freyground.com
+
+[vnet_controller]
 localhost ansible_connection=local
 
-[revproxytunnel_deployment]
-rphost.freyground.com
+[vnet_lan]
+10.1.0.1
+
+[vnet_remote]
+gw1.freyground.com

@@ -1,0 +1,17 @@
+[Unit]
+Description=Freyground Ollama Instance
+
+[Container]
+Label=ollama
+ContainerName=ollama
+Image=docker.io/ollama/ollama:latest
+PublishPort=11434:11434
+Volume=/srv/data/ollama:/root/.ollama/
+EnvironmentFile=/srv/.env
+AutoUpdate=registry
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

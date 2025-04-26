@@ -1,0 +1,16 @@
+[Unit]
+Description=Freyground Home Assistant Instance
+
+[Container]
+Label=homeassistant
+ContainerName=homeassistant
+Image=ghcr.io/home-assistant/home-assistant:stable
+PublishPort=3003:8123
+Volume=/srv/data/homeassistant:/config
+EnvironmentFile=/srv/.env
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target default.target

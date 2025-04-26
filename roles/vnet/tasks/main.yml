@@ -1,0 +1,25 @@
+---
+# Ansible role for setting up a debian machine w/ Azure local vpn conenction.
+
+# PSK LEAWo5iKjgNuTobQfsC8cf81yTkLikzKIi17Z/i6NbY=
+
+- name: Install VNet Packages
+  become: true
+  ansible.builtin.apt:
+    package:
+      - certbot
+      - strongswan
+      - strongswan-pki
+      - strongswan-swanctl
+      - libcharon-extra-plugins
+    update_cache: true
+  when: "'vnet_local' in group_names"
+
+# TODO ensure azure login
+
+- name: AZ Resource Group
+  azure.azcollection.azure_rm_resourcegroup:
+    name: "{{ AZ_ROOT_RG }}"
+    location: "{{ AZ_ROOT_LOCATION }}"
+    state: present
+  when: "'vnet_controller' in group_names"
