@@ -1,14 +1,15 @@
 [default]
 localhost ansible_connection=local
 hl.freyground.com
-gw1.freyyground.com
-gw2.freyground.com
 
 [vnet_controller]
 localhost ansible_connection=local
 
-[vnet_lan]
+[vnet_gateway]
+0.0.0.0
+
+[vnet_hcloud]
 10.1.0.1
 
-[vnet_remote]
+[vnet_azcloud]
 gw1.freyground.com

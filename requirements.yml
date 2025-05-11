@@ -1,0 +1,5 @@
+---
+collections:
+  - community.general
+  - nn708.openwrt
+  - devsec.hardening

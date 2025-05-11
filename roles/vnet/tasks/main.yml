@@ -1,7 +1,7 @@
 ---
-# Ansible role for setting up a debian machine w/ Azure local vpn conenction.
+# Ansible role for setting up the freyground virtual network.
 
-# PSK LEAWo5iKjgNuTobQfsC8cf81yTkLikzKIi17Z/i6NbY=
+- name: Ensure port forwarding rules
 
 - name: Install VNet Packages
   become: true
@@ -13,13 +13,13 @@
       - strongswan-swanctl
       - libcharon-extra-plugins
     update_cache: true
-  when: "'vnet_local' in group_names"
+  when: "'vnet_hcloud' in group_names or 'vnet_azcloud' in group_names"
 
-# TODO ensure azure login
+- name: Install IPSec config (AZCLOUD)
+  become: true
 
-- name: AZ Resource Group
-  azure.azcollection.azure_rm_resourcegroup:
-    name: "{{ AZ_ROOT_RG }}"
-    location: "{{ AZ_ROOT_LOCATION }}"
-    state: present
-  when: "'vnet_controller' in group_names"
+- name: Install IPSec config (HCLOUD)
+  become: true
+
+- name: Install PSK
+  become: true

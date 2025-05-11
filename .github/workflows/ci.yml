@@ -18,6 +18,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Bootstrap ansible
         run: apt-get update; apt-get install -y ansible make
+      - name: Install ansible dependencies
+        run: make install
       - name: Run Continuous Integration Playbook
         run: make ci
       - name: Run Continuous Deployment Playbook

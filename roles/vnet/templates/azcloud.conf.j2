@@ -1,0 +1,19 @@
+config setup
+    charondebug="all"
+    uniqueids=yes
+
+conn azcloud-to-hcloud
+    auto=start
+    keyexchange=ikev2
+    authby=secret
+    left=198.51.100.2
+    leftid=serverB
+    leftsubnet=192.168.2.0/24
+    right=203.0.113.1
+    rightid=serverA
+    rightsubnet=192.168.1.0/24
+    ike=aes256-sha2_384-modp2048!
+    esp=aes256-sha2_256!
+    dpdaction=restart
+    dpddelay=30s
+    dpdtimeout=120s

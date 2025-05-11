@@ -4,21 +4,3 @@
   become: true
   ansible.builtin.apt:
     update_cache: true
-
-- name: Install revproxytunnel env
-  become: true
-  when: lookup('env', 'IS_GH_RUNNER') is not defined
-  tags:
-    - optional
-  ansible.builtin.apt:
-    package:
-      - docker.io
-    state: present
-
-- name: Start revproxytunnel env
-  become: true
-  when: lookup('env', 'IS_GH_RUNNER') is not defined
-  ansible.builtin.systemd_service:
-    unit: docker
-    state: started
-    daemon_reload: true
