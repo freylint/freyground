@@ -1,0 +1,10 @@
+
+- name: Ensure npm dependencies are installed
+  ansible.builtin.npm:
+    path: "{{ role_path }}"
+    state: present
+
+- name: Build project
+  ansible.builtin.command:
+    cmd: npm run build
+    chdir: "{{ role_path }}/files/"

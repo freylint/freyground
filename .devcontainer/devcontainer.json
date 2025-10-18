@@ -1,0 +1,21 @@
+// See https://containers.dev/ for devcontainer.json reference
+{
+    "name": "freyground",
+    "build": {
+        "dockerfile": "../cicd.Containerfile",
+        "context": "."
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "golang.go",
+                "redhat.ansible"
+            ]
+        }
+    },
+    "workspaceFolder": "/fground",
+    "runArgs": [
+        "--privileged"
+    ]
+}

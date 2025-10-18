@@ -1,0 +1,7 @@
+---
+- name: Run code role
+  hosts: build
+  roles:
+    - collect
+    - code
+    - homelab

@@ -1,0 +1,18 @@
+
+- name: Run Go tests
+  ansible.builtin.import_tasks: test.yml
+
+- name: Clean build directory
+  ansible.builtin.file:
+    path: "{{ GO_BUILD_DIR }}"
+    state: absent
+
+- name: Build Go binaries
+  ansible.builtin.import_tasks: build.yml
+
+- name: Containerize container apps
+  ansible.builtin.import_tasks: containerize.yml
+
+- name: Set fact for FGWeb tag
+  ansible.builtin.set_fact:
+    fgweb_tag: "{{ FGWEB_TAG }}"

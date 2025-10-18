@@ -1,0 +1,11 @@
+[Unit]
+Description=fgwed:indev container
+After=network-online.target
+Wants=network-online.target
+
+[Container]
+Image=fgwed:indev
+PublishPort=8080:80
+
+[Install]
+WantedBy=default.target

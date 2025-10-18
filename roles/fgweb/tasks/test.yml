@@ -1,0 +1,30 @@
+---
+
+- name: Run all Go tests
+  ansible.builtin.shell: go test -v ./...
+  register: gotest_result
+  args:
+    chdir: "{{ role_path }}/files"
+  tags: 
+    - go
+    - test
+
+- name: Show Go test output
+  ansible.builtin.debug:
+    msg: |
+      {{ gotest_result.stdout_lines }}
+  tags: 
+    - go
+    - test
+
+- name: Show Go test failures
+  ansible.builtin.debug:
+    msg: |
+      Failed tests:
+      {% for line in gotest_result.stdout_lines %}
+        {% if 'FAIL' in line %}{{ line }}{% endif %}
+      {% endfor %}
+  when: gotest_result.stdout is search('FAIL')
+  tags: 
+    - go
+    - test

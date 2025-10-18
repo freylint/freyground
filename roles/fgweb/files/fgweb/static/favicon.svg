@@ -1,0 +1,12 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Terminal background (fills most of the screen) -->
+  <rect x="5" y="5" width="170" height="170" rx="16" fill="#262626" />
+  <!-- Terminal header (controls) -->
+  <circle cx="157" cy="20" r="5" fill="#FF5F56"/>
+  <circle cx="141" cy="20" r="5" fill="#FFBD2E"/>
+  <circle cx="125" cy="20" r="5" fill="#27C93F"/>
+  <!-- Terminal prompt line -->
+  <rect x="8" y="30" width="164" height="142" rx="10" fill="#1a1a1a"/>
+  <!-- "FG" Text in monospace style -->
+  <text x="20" y="122" font-family="monospace" font-size="80" fill="#00FF88" font-weight="bold" letter-spacing="2">>FG</text>
+</svg>

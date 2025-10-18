@@ -1,0 +1,25 @@
+---
+# List of apt packages to install for devenv role
+devenv_apt_packages: [
+  apt-transport-https,
+  ca-certificates,
+  curl,
+  gnupg,
+  lsb-release,
+  golang,
+  podman,
+  ansible,
+  zsh,
+  git,
+  locales,
+  sudo,
+  make,
+  live-build,
+  debootstrap,
+  squashfs-tools,
+  npm,
+]
+
+devenv_microsoft_packages: [
+  azure-cli
+]

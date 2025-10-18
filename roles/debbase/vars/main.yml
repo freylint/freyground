@@ -1,0 +1,6 @@
+# Temporary directory for fg-debbase build
+fg_debbase_name: fg-baseimg
+fg_debbase_build_dir: /tmp/{{fg_debbase_name}}
+fg_debbase_img_flags: "--binary-images iso-hybrid --distribution stable --backports true"
+fg_debbase_lb_config_flags: "{{fg_debbase_img_flags}} --mirror-binary http://debian-archive.trafficmanager.net/debian/"
+fg_debbase_build_arch: x86_64

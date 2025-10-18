@@ -1,0 +1,11 @@
+[Unit]
+Description=Check for image updates just before loading into the graphical session
+DefaultDependencies=no
+Before=systemd-user-sessions.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/fgliveup
+
+[Install]
+WantedBy=multi-user.target

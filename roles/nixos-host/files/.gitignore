@@ -1,0 +1,12 @@
+# Build artifacts
+result/
+result
+**/*.qcow2
+
+# Quatro
+docs/index.ipynb
+docs/index.html
+docs/index_*/
+docs/.gitignore/
+_*/
+**/.quarto/

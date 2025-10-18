@@ -1,0 +1,4 @@
+fg_dns_targets:
+  - www
+  - api
+  - ha

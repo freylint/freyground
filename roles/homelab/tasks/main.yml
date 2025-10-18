@@ -1,0 +1,11 @@
+---
+
+# TODO set facts for base image build
+
+# TODO Performa base image configuration
+
+# TODO apply strongswan configuration over base image
+
+# TODO bundle project software
+
+# TODO build vm image

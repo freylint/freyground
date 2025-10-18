@@ -1,0 +1,29 @@
+
+---
+- name: Set build directory
+  ansible.builtin.set_fact:
+    fg_build_dir: "{{playbook_dir}}/build"
+
+- name: Set intermediate collection fact
+  ansible.builtin.set_fact:
+    fg_intermediate_artifact_dir: "{{fg_build_dir}}/intermediate"
+
+- name: Set dist directory
+  ansible.builtin.set_fact:
+    fg_dist_dir: "{{fg_build_dir}}/dist"
+
+- name: Set collection targets
+  ansible.builtin.set_fact:
+    fg_collection_targets: "{{ fg_collection_targets | default([]) }}"
+
+- name: Create per target dist directory
+  ansible.builtin.file:
+    path: "{{ fg_dist_dir }}/{{ item }}"
+    state: directory
+    mode: '0755'
+  with_items: "{{ fg_collection_targets }}"
+  when: fg_collection_targets | length > 0
+
+- name: Set fact for dns targets
+  ansible.builtin.set_fact:
+    fg_dns_targets: {{ fg_dns_targets }}

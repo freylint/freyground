@@ -1,0 +1,27 @@
+
+- name: Copy FGWeb Container file to build directory
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/fgweb/Containerfile"
+    dest: "{{ fg_intermediate_artifact_dir }}/fgweb.Containerfile"
+    mode: '0644'
+
+- name: Build FGWeb container image
+  ansible.builtin.command: >
+    podman build -t fgweb:{{ FGWEB_TAG }} -f ./fgweb.Containerfile
+  args:
+    chdir: "{{ fg_intermediate_artifact_dir }}"
+  environment:
+    DOCKER_BUILDKIT: "1"
+
+- name: Remove existing container image file if exists
+  ansible.builtin.file:
+    path: "{{ fg_intermediate_artifact_dir }}/fgweb-{{ FGWEB_TAG }}.tar"
+    state: absent
+  ignore_errors: true
+
+- name: Save FGWeb container image file
+  ansible.builtin.command: >
+    podman save -o fgweb-{{ FGWEB_TAG }}.tar fgweb:{{ FGWEB_TAG }}
+  args:
+    chdir: "{{ fg_intermediate_artifact_dir }}"
+  register: fgweb_container_save_result

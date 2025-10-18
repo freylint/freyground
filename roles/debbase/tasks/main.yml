@@ -1,0 +1,46 @@
+---
+
+- name: Remove existing build
+  ignore_errors: true
+  ansible.builtin.file:
+    path: "{{ fg_debbase_build_dir }}/chroot"
+    state: absent
+
+- name: Ensure fg-debbase build directory
+  ansible.builtin.file:
+    path: "{{ fg_debbase_build_dir }}"
+    state: directory
+    mode: '0755'
+
+- name: Create Live-Build config tree
+  ansible.builtin.command:
+    cmd: "lb config {{ fg_debbase_lb_config_flags }}"
+    chdir: "{{ fg_debbase_build_dir }}"
+  ignore_errors: true
+
+# TODO don't hardcode arch
+- name: Copy fgweb from code role
+  ansible.builtin.copy:
+    src: "{{ fg_intermediate_artifact_dir }}/fgweb.x86_64"
+    dest: "{{ fg_debbase_build_dir }}/config/includes.chroot/srv/"
+    mode: '0755'
+
+- name: Copy fgweb static files
+  ansible.builtin.copy:
+    src: "{{ fg_intermediate_artifact_dir }}/static/"
+    dest: "{{ fg_debbase_build_dir }}/config/includes.chroot/srv/"
+    mode: '0755'
+
+- name: Copy project tree over generated tree
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/"
+    dest: "{{ fg_debbase_build_dir }}"
+  
+- name: Build fg-debbase
+  become: yes
+  ansible.builtin.command:
+    cmd: "lb build"
+    chdir: "{{ fg_debbase_build_dir }}"
+  register: fg_debbase_build_result
+
+# TODO Set up systemd on the live iso

@@ -1,0 +1,6 @@
+FROM debian:bookworm-slim
+
+COPY fgweb.x86_64 /fgweb.x86_64
+EXPOSE 8080
+
+CMD ["/fgweb.x86_64"]

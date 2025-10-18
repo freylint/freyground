@@ -1,0 +1,29 @@
+---
+- name: Ensure build directory exists
+  ansible.builtin.file:
+    path: "{{ fg_intermediate_artifact_dir }}"
+    state: directory
+
+- name: Build Go binaries
+  ansible.builtin.command: >
+    go build -o {{ fg_intermediate_artifact_dir }}/{{ item.output }} {{ item.src }}
+  args:
+    chdir: "{{ role_path }}/files"
+  environment:
+    GOOS: "{{ item.os }}"
+    GOARCH: "{{ item.arch }}"
+    CGO_ENABLED: "0"
+  loop:
+    - { output: 'fgweb', src: './fgweb', os: 'linux', arch: 'amd64' }
+    - { output: 'srcian.exe', src: './srcian-launcher', os: 'windows', arch: 'amd64' }
+    - { output: 'srcian.x86_64', src: './srcian-launcher', os: 'linux', arch: 'amd64' }
+    - { output: 'fgliveup', src: './fgliveup', os: 'linux', arch: 'amd64' }
+  tags:
+    - go
+    - fgweb
+    - srcerian
+  
+- name: Copy FGWeb static files to intermediate directory
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/fgweb/static/"
+    dest: "{{ fg_intermediate_artifact_dir }}/static/"

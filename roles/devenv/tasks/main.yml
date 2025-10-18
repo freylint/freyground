@@ -1,0 +1,62 @@
+---
+- name: Ensure user dev exists
+  ansible.builtin.user:
+    name: dev
+    state: present
+
+- name: Ensure /etc/sudoers.d directory exists
+  ansible.builtin.file:
+    path: /etc/sudoers.d
+    state: directory
+    owner: root
+    group: root
+    mode: '0750'
+
+- name: Give dev user passwordless sudo access
+  ansible.builtin.copy:
+    dest: /etc/sudoers.d/dev
+    content: "dev ALL=(ALL) NOPASSWD:ALL\n"
+    owner: root
+    group: root
+    mode: '0440'
+
+- name: Install base packages
+  ansible.builtin.apt:
+    name: "{{ devenv_apt_packages }}"
+    state: present
+    update_cache: yes
+
+- name: Ensure /etc/apt/keyrings directory exists
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Microsoft GPG key
+  ansible.builtin.apt_key:
+    url: https://packages.microsoft.com/keys/microsoft.asc
+    state: present
+    keyring: /etc/apt/keyrings/microsoft.gpg
+
+- name: Set ms_arch for Microsoft repo
+  ansible.builtin.set_fact:
+    ms_arch: "{{ ansible_architecture == 'x86_64' | ternary('amd64', ansible_architecture) }}"
+
+- name: Add Azure CLI apt repository
+  ansible.builtin.apt_repository:
+    repo: "deb [arch={{ ms_arch }} signed-by=/etc/apt/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/azure-cli/ {{ ansible_lsb.codename }} main"
+    state: present
+    update_cache: false
+
+- name: Install Microsoft packages
+  ansible.builtin.apt:
+    name: "{{ devenv_microsoft_packages }}"
+    state: present
+    update_cache: true
+
+- name: Ensure azd is installed
+  ansible.builtin.shell:
+    cmd: "curl -fsSL https://aka.ms/install-azd.sh | bash"
+    creates: /usr/local/bin/azd

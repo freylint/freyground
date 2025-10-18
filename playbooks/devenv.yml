@@ -1,0 +1,6 @@
+---
+- name: Install development environment
+  hosts: build
+  become: true
+  roles:
+    - devenv
